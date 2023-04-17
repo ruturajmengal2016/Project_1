@@ -6,7 +6,7 @@
   align-items: center;
 }
 .first {
-  background-color: rgba(151, 142, 142, 0.477);
+  background-color: rgb(226, 221, 221);
   height: 85%;
   width: 100%;
   color: white;
@@ -19,7 +19,7 @@
 
 .first_one {
   flex: 1;
-  background-color: rgba(151, 142, 142, 0.477);
+  background-color: #616161;
   max-height: 70%;
   max-width: 18%;
   box-sizing: border-box;
@@ -87,7 +87,7 @@
 
 .first_third {
   flex: 2;
-  background-color: black;
+  background-color: #616161;
   height: 80%;
   width: 30%;
   display: flex;
@@ -97,7 +97,7 @@
 }
 
 .first_third ul li {
-  color: rgba(235, 232, 232, 0.477);
+  color: rgb(235, 232, 232);
   list-style: none;
   display: flex;
   gap: 0.5rem;
@@ -111,7 +111,7 @@
 
 .first_third p {
   text-align: justify;
-  color: rgba(235, 232, 232, 0.477);
+  color: rgb(235, 232, 232);
 }
 
 @media screen and (max-width: 800px) {
