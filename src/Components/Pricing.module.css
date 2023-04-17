@@ -1,0 +1,138 @@
+.root {
+  background-color: black;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.first {
+  background-color: rgba(151, 142, 142, 0.477);
+  height: 85%;
+  width: 100%;
+  color: white;
+  display: flex;
+  gap: 3rem;
+  align-items: center;
+  padding: 2rem 1rem 2rem 5rem;
+  box-sizing: border-box;
+}
+
+.first_one {
+  flex: 1;
+  background-color: rgba(151, 142, 142, 0.477);
+  max-height: 70%;
+  max-width: 18%;
+  box-sizing: border-box;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+#one {
+  font-size: 1.2rem;
+}
+
+#two {
+  color: green;
+  font-size: 4rem;
+}
+
+#three {
+  font-size: 1.2rem;
+}
+
+#four {
+  width: 90%;
+  padding: 2rem;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: flex-start;
+  font-size: 1.2rem;
+}
+
+#four li {
+  list-style: none;
+}
+
+.first_one button {
+  width: 80%;
+  height: 2.5rem;
+}
+.first_second button {
+  background-color: green;
+  color: white;
+  width: 80%;
+  height: 10%;
+  border: none;
+}
+.first_second {
+  flex: 1;
+  color: black;
+  background-color: white;
+  height: 80%;
+  max-width: 20%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.first_third {
+  flex: 2;
+  background-color: black;
+  height: 80%;
+  width: 30%;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  padding: 1rem;
+}
+
+.first_third ul li {
+  color: rgba(235, 232, 232, 0.477);
+  list-style: none;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.first_third ul {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.first_third p {
+  text-align: justify;
+  color: rgba(235, 232, 232, 0.477);
+}
+
+@media screen and (max-width: 800px) {
+  .root {
+    height: fit-content;
+  }
+  .first {
+    flex-direction: column;
+  }
+
+  .first_one {
+    max-width: 80%;
+  }
+
+  .first_second{
+    max-width: 40%;
+  }
+
+  .first_third {
+    width: 90%;
+    align-self: center;
+    margin: auto;
+  }
+}
