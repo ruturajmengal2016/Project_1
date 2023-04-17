@@ -7,12 +7,14 @@ import {
   Outlet,
   Link
 } from "react-router-dom";
+import Pricing from "./Components/Pricing";
 function App() {
   const router = createBrowserRouter(
     createRoutesFromElements(
       <Route path="/" element={<Root />} >
         <Route index path="/" element={<h1>Home</h1>} />
-        <Route path="/about" element={<h1>About</h1>}/>
+        <Route path="/about" element={<h1>About</h1>}/> 
+        <Route path="/pricing" element={<Pricing/>}/> 
       </Route>
     )
   );
@@ -28,7 +30,8 @@ const Root = () => {
     <div className="root">
       <div className="navigation">
         <Link to="/">Home</Link> 
-        <Link to="/about">About</Link> 
+        <Link to="/about">About</Link>  
+        <Link to="/pricing">Pricing</Link>  
       </div>
       <div className="outlet">
         <Outlet />

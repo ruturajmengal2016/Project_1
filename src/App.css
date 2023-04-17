@@ -13,7 +13,7 @@
 }
 
 .outlet{
-    height: 100vh;
+    max-height: fit-content;
     background-color: pink;
 }
 
