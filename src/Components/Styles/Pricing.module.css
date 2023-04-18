@@ -107,6 +107,7 @@
   justify-content: space-around;
   flex-direction: column;
   padding: 1rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .first_third ul li {

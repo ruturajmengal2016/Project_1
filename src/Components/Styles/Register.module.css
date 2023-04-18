@@ -1,10 +1,12 @@
 .root {
-  background-color: aqua;
+  overflow: hidden;
+  object-fit: scale-down;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
   max-height: fit-content;
+  background: linear-gradient(135deg, white, rgb(10, 10, 34), rgb(139, 0, 35));
 }
 
 form {

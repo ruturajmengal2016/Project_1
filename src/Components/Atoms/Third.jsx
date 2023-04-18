@@ -15,16 +15,16 @@ const Third = () => {
       <h1>Each Plan Included</h1>
       <ul>
         <li>
-          <BsArrowRight size={25} color="green" /> <span>The best equipment global brand</span>
+          <BsArrowRight size={25} color="green" /> <span style={{fontSize:"1.1rem"}}>The best equipment global brand</span>
         </li>
         <li>
-          <BsArrowRight size={25} color="green" /> <span>The gym open 24 hours a day, 7 days a week</span>
+          <BsArrowRight size={25} color="green" /> <span style={{fontSize:"1.1rem"}}>The gym open 24 hours a day, 7 days a week</span>
         </li>
         <li>
-          <BsArrowRight size={25} color="green" /> <span>Two safe payment methods</span>
+          <BsArrowRight size={25} color="green" /> <span style={{fontSize:"1.1rem"}}>Two safe payment methods</span>
         </li>
         <li>
-          <BsArrowRight size={25} color="green" /> <span>Group fitness classes in the price of subscription</span>
+          <BsArrowRight size={25} color="green" /> <span style={{fontSize:"1.1rem"}}>Group fitness classes in the price of subscription</span>
         </li>
         <li>
           <BsArrowRight size={25} color="green" />

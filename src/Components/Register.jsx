@@ -3,50 +3,76 @@ import TextField from "@mui/material/TextField";
 import Style from "./Styles/Register.module.css";
 import Button from "@mui/material/Button";
 import SendIcon from "@mui/icons-material/Send";
+import { Typography } from "@mui/material";
 
 const Register = () => {
   const [details, setDetails] = useState({ name: "", email: "", password: "" });
   const [data, setData] = useState();
-  useEffect(()=>{
-    localStorage.setItem("user",JSON.stringify(data))
-  },[data])
+  useEffect(() => {
+    localStorage.setItem("user", JSON.stringify(data));
+  }, [data]);
   return (
     <div className={Style.root}>
+      <img
+        src="https://images.pexels.com/photos/13811057/pexels-photo-13811057.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+        alt=""
+        style={{
+          zIndex: 1,
+          objectFit: "cover",
+          height: "90%",
+          opacity: "0.5",
+          translate: "-5rem",
+        }}
+      />
       <form>
+        <Typography
+          variant="h6"
+          sx={{
+            color: "red",
+            textAlign: "center",
+            alignSelf: "flex-start",
+            fontWeight: "bold",
+          }}
+        >
+          SIGN UP
+        </Typography>
         <TextField
           name="name"
-          id="outlined-basic"
           label="Name"
-          variant="outlined"
+          variant="filled"
+          color="success"
+          focused
           onChange={(e) => {
             setDetails({ ...details, [e.target.name]: e.target.value });
           }}
         />
         <TextField
           name="email"
-          id="outlined-basic"
           label="Email"
-          variant="outlined"
+          variant="filled"
+          color="success"
+          focused
           onChange={(e) => {
             setDetails({ ...details, [e.target.name]: e.target.value });
           }}
         />
         <TextField
           name="password"
-          id="outlined-basic"
           label="Password"
-          variant="outlined"
+          variant="filled"
+          color="success"
+          focused
           onChange={(e) => {
             setDetails({ ...details, [e.target.name]: e.target.value });
           }}
         />
         <Button
-          variant="contained"
+          sx={{ alignSelf: "flex-start" }}
+          variant="outlined"
           endIcon={<SendIcon />}
           onClick={(e) => {
-            e.preventDefault()
+            e.preventDefault();
             setData([...data, details]);
-
           }}
         >
           Send
