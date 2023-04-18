@@ -1,13 +1,25 @@
 .root {
-  background-color: black;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
   max-height: fit-content;
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(255, 0, 35, 0.7036064425770308) 100%,
+    rgba(9, 9, 121, 0.8492647058823529) 43%
+  );
 }
 .first {
-  background-color: rgb(226, 221, 221);
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(255, 0, 35, 0.7036064425770308) 100%,
+    rgba(9, 9, 121, 0.8492647058823529) 43%
+  );
   height: 85%;
   width: 100%;
   color: white;
@@ -111,6 +123,7 @@
 }
 
 .first_third p {
+  font-size: 1.2rem;
   text-align: justify;
   color: rgb(235, 232, 232);
 }

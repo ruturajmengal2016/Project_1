@@ -13,6 +13,7 @@ import Register from "./Components/Register";
 import Footer from "./Components/Footer";
 import Login from "./Components/Login";
 import About from "./Components/About";
+import Training from "./Components/Training";
 function App() {
   const router = createBrowserRouter(
     createRoutesFromElements(
@@ -20,6 +21,7 @@ function App() {
         <Route index path="/" element={<Home />} />
         <Route index path="/about" element={<About />} />
         <Route path="/pricing" element={<Pricing />} />
+        <Route path="/training" element={<Training />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
       </Route>
