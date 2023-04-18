@@ -9,12 +9,13 @@ import {
 import Pricing from "./Components/Pricing";
 import Navigation from "./Components/Navigation";
 import Home from "./Components/Home";
+import Register from "./Components/Register";
 function App() {
   const router = createBrowserRouter(
     createRoutesFromElements(
       <Route path="/" element={<Root />} >
         <Route index path="/" element={<Home />} />
-        <Route path="/about" element={<h1>About</h1>}/> 
+        <Route path="/about" element={<Register/>}/> 
         <Route path="/pricing" element={<Pricing/>}/> 
       </Route>
     )

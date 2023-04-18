@@ -1,5 +1,5 @@
 import React from "react";
-import Style from "../Pricing.module.css";
+import Style from "../Styles/Pricing.module.css";
 import { BsCheckCircle } from "react-icons/bs";
 const Second = () => {
   return (

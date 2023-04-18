@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import Style from "./Navigation.module.css";
+import Style from "./Styles/Navigation.module.css";
 import Button from "@mui/material/Button";
 import { GiHamburgerMenu } from "react-icons/gi";
 const Navigation = () => {
@@ -18,9 +18,9 @@ const Navigation = () => {
         <Link to="/" className={Style.link}>
           Home
         </Link>
-        <Link className={Style.link}>About Us</Link>
-        <Link className={Style.link}>Classes</Link>
-        <Link className={Style.link}>Blogs</Link>
+        <Link to="/about" className={Style.link}>About Us</Link>
+        <Link to="/about" className={Style.link}>Classes</Link>
+        <Link to="/about" className={Style.link}>Blogs</Link>
       </div>
       <Button
         variant="contained"
