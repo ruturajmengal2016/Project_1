@@ -39,14 +39,14 @@ h2 {
   .routes {
     position: absolute;
     flex-direction: column;
-    top: 7rem;
+    top: 5rem;
     right: 1rem;
     align-items: flex-end;
   }
   .button {
     position: relative;
     left: 13.5rem;
-    top: 13rem;
+    top: 12rem;
   }
 
   .menu {

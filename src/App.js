@@ -4,19 +4,22 @@ import {
   createRoutesFromElements,
   Route,
   RouterProvider,
-  Outlet
+  Outlet,
 } from "react-router-dom";
 import Pricing from "./Components/Pricing";
 import Navigation from "./Components/Navigation";
 import Home from "./Components/Home";
 import Register from "./Components/Register";
+import Footer from "./Components/Footer";
+import Login from "./Components/Login";
 function App() {
   const router = createBrowserRouter(
     createRoutesFromElements(
-      <Route path="/" element={<Root />} >
+      <Route path="/" element={<Root />}>
         <Route index path="/" element={<Home />} />
-        <Route path="/about" element={<Register/>}/> 
-        <Route path="/pricing" element={<Pricing/>}/> 
+        <Route path="/pricing" element={<Pricing />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
       </Route>
     )
   );
@@ -31,10 +34,8 @@ const Root = () => {
   return (
     <div className="root">
       <Navigation />
-      <div className="outlet">
-        <Outlet />
-      </div>
-      <div className="footer">Footer</div>
+      <Outlet />
+      <Footer />
     </div>
   );
 };

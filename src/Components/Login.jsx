@@ -4,7 +4,7 @@ import Style from "./Styles/Register.module.css";
 import Button from "@mui/material/Button";
 import SendIcon from "@mui/icons-material/Send";
 
-const Register = () => {
+const Login = () => {
   const [details, setDetails] = useState({ email: "", password: "" });
   const [data, setData] = useState();
   useEffect(() => {
@@ -44,4 +44,4 @@ const Register = () => {
   );
 };
 
-export default Register;
+export default Login;

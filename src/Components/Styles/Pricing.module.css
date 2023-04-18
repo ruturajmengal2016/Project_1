@@ -1,9 +1,10 @@
 .root {
   background-color: black;
-  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 100vh;
+  max-height: fit-content;
 }
 .first {
   background-color: rgb(226, 221, 221);
@@ -126,7 +127,7 @@
     max-width: 80%;
   }
 
-  .first_second{
+  .first_second {
     max-width: 40%;
   }
 

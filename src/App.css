@@ -1,24 +1,24 @@
-*{
-    margin: 0;
-    padding: 0;
+* {
+  margin: 0;
+  padding: 0;
 }
-.root{
-    height: 100vh;
-    background-color: orange;
-}
-
-.navigation{
-    height: 10vh;
-    background-color: rgb(90, 90, 201);
+.root {
+  height: 100vh;
+  max-height: fit-content;
 }
 
-.outlet{
-    height: 100vh;
-    max-height: fit-content;
-    background-color: pink;
+.navigation {
+  height: 10vh;
+  background-color: rgb(90, 90, 201);
 }
 
-.footer{
-    height: 20vh;
-    background-color: green;
+.outlet {
+  height: 100vh;
+  max-height: fit-content;
+  background-color: pink;
+}
+
+.footer {
+  height: 20vh;
+  background-color: green;
 }
