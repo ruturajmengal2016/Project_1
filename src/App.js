@@ -12,11 +12,13 @@ import Home from "./Components/Home";
 import Register from "./Components/Register";
 import Footer from "./Components/Footer";
 import Login from "./Components/Login";
+import About from "./Components/About";
 function App() {
   const router = createBrowserRouter(
     createRoutesFromElements(
       <Route path="/" element={<Root />}>
         <Route index path="/" element={<Home />} />
+        <Route index path="/about" element={<About />} />
         <Route path="/pricing" element={<Pricing />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
