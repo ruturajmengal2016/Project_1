@@ -16,7 +16,7 @@ const Navigation = () => {
             : `${Style.routes} ${Style.hide}`
         }
       >
-        <Link to="/" className={Style.link}>
+        <Link to="/home" className={Style.link}>
           Home
         </Link>
         <Link to="/about" className={Style.link}>About Us</Link>

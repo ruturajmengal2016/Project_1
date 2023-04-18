@@ -4,12 +4,25 @@ import Style from "./Styles/Register.module.css";
 import Button from "@mui/material/Button";
 import SendIcon from "@mui/icons-material/Send";
 import { Typography } from "@mui/material";
+import joi from "joi";
 
 const Register = () => {
   const [details, setDetails] = useState({ name: "", email: "", password: "" });
-  const [data, setData] = useState();
+  const [data, setData] = useState([]);
+  const schema = joi.object({
+    name: joi.string().max(20).required(),
+    email: joi.string(),
+    password: joi.string().pattern(new RegExp("^[a-zA-Z0-9]")),
+  })
   useEffect(() => {
-    localStorage.setItem("user", JSON.stringify(data));
+    schema
+      .validateAsync(data[0])
+      .then((res) => {
+        localStorage.setItem("user", JSON.stringify(data));
+      })
+      .catch((error) => {
+        alert(error);
+      });
   }, [data]);
   return (
     <div className={Style.root}>
