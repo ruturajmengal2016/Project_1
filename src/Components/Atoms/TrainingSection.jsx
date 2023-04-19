@@ -75,7 +75,7 @@ const TrainingSection = () => {
           div.current.scrollLeft += 700;
         }}
       >
-        SEE THE WHOLE
+        SEE THE WHOLE TEAM
       </Button>
     </div>
   );

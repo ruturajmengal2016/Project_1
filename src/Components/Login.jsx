@@ -1,4 +1,4 @@
-import React, {useState } from "react";
+import React, { useState } from "react";
 import TextField from "@mui/material/TextField";
 import Style from "./Styles/Register.module.css";
 import Button from "@mui/material/Button";
@@ -41,6 +41,7 @@ const Login = () => {
           label="Email"
           color="secondary"
           focused
+          sx={{ input: { color: "white" } }}
           onChange={(e) => {
             setDetails({ ...details, [e.target.name]: e.target.value });
           }}
@@ -51,6 +52,7 @@ const Login = () => {
           label="Password"
           color="secondary"
           focused
+          sx={{ input: { color: "white" } }}
           onChange={(e) => {
             setDetails({ ...details, [e.target.name]: e.target.value });
           }}

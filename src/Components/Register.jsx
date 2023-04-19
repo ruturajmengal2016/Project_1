@@ -5,28 +5,12 @@ import Button from "@mui/material/Button";
 import SendIcon from "@mui/icons-material/Send";
 import { Typography } from "@mui/material";
 import joi from "joi";
+import { useNavigate } from "react-router-dom";
 
 const Register = () => {
-  const [details, setDetails] = useState({ name: "", email: "", password: "" });
   const [data, setData] = useState([]);
-  const schema = joi.object({
-    name: joi.string().max(20).required(),
-    email: joi.string(),
-    password: joi.string().pattern(new RegExp("^[a-zA-Z0-9]")),
-  });
-
-  const validate = () => {
-    setData([...data, details]);
-    schema
-      .validateAsync(data[0])
-      .then((res) => {
-        localStorage.setItem("user", JSON.stringify(data));
-      })
-      .catch((error) => {
-        alert(error);
-      });
-  };
-
+  const [details, setDetails] = useState({ name: "", email: "", password: "" });
+  const navigate = useNavigate();
   return (
     <div className={Style.root}>
       <img
@@ -58,16 +42,19 @@ const Register = () => {
           variant="filled"
           color="success"
           focused
+          sx={{ input: { color: "white" } }}
           onChange={(e) => {
             setDetails({ ...details, [e.target.name]: e.target.value });
           }}
         />
         <TextField
+          type="email"
           name="email"
           label="Email"
           variant="filled"
           color="success"
           focused
+          sx={{ input: { color: "white" } }}
           onChange={(e) => {
             setDetails({ ...details, [e.target.name]: e.target.value });
           }}
@@ -78,17 +65,20 @@ const Register = () => {
           variant="filled"
           color="success"
           focused
+          sx={{ input: { color: "white" } }}
           onChange={(e) => {
             setDetails({ ...details, [e.target.name]: e.target.value });
           }}
         />
         <Button
+          type="submit"
           sx={{ alignSelf: "flex-start" }}
           variant="outlined"
           endIcon={<SendIcon />}
           onClick={(e) => {
             e.preventDefault();
-            validate();
+            setData([...data, details]);
+            localStorage.setItem("user", JSON.stringify(data));
           }}
         >
           Send
