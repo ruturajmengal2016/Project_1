@@ -15,7 +15,17 @@ const Register = () => {
     email: joi.string(),
     password: joi.string().pattern(new RegExp("[a-zA-Z0-9]")),
   });
-
+  const handleChange = () => {
+    const values = [...data, details];
+    setData(values);
+    schema
+      .validateAsync(details)
+      .then((res) => {
+        localStorage.setItem("user", JSON.stringify(values));
+        navigate("/login");
+      })
+      .catch((err) => alert(err));
+  };
   return (
     <div className={Style.root}>
       <img
@@ -82,15 +92,7 @@ const Register = () => {
           endIcon={<SendIcon />}
           onClick={(e) => {
             e.preventDefault();
-            const values = [...data, details];
-            setData(values);
-            schema
-              .validateAsync(details)
-              .then((res) => {
-                localStorage.setItem("user", JSON.stringify(values));
-                navigate("/login")
-              })
-              .catch((err) => alert(err));
+            handleChange();
           }}
         >
           Send
