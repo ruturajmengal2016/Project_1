@@ -6,11 +6,16 @@ import SendIcon from "@mui/icons-material/Send";
 import { Typography } from "@mui/material";
 import joi from "joi";
 import { useNavigate } from "react-router-dom";
-
 const Register = () => {
   const [data, setData] = useState([]);
   const [details, setDetails] = useState({ name: "", email: "", password: "" });
   const navigate = useNavigate();
+  const schema = joi.object({
+    name: joi.string().max(20).required(),
+    email: joi.string(),
+    password: joi.string().pattern(new RegExp("[a-zA-Z0-9]")),
+  });
+
   return (
     <div className={Style.root}>
       <img
@@ -77,8 +82,15 @@ const Register = () => {
           endIcon={<SendIcon />}
           onClick={(e) => {
             e.preventDefault();
-            setData([...data, details]);
-            localStorage.setItem("user", JSON.stringify(data));
+            const values = [...data, details];
+            setData(values);
+            schema
+              .validateAsync(details)
+              .then((res) => {
+                localStorage.setItem("user", JSON.stringify(values));
+                navigate("/login")
+              })
+              .catch((err) => alert(err));
           }}
         >
           Send

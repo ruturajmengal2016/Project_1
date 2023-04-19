@@ -10,6 +10,18 @@ const Login = () => {
   const [details, setDetails] = useState({ email: "", password: "" });
   const [data, setData] = useState([]);
   const navigate = useNavigate();
+  function handleUser() {
+    setData([...data,details])
+    const user = JSON.parse(localStorage.getItem("user"));
+    user.find((ele) => {
+      if (ele.email === details.email) {
+        navigate("/home");
+      }else{
+        alert("You don't have an account")
+        return -1
+      }
+    });
+  }
   return (
     <div className={Style.root}>
       <img
@@ -61,7 +73,7 @@ const Login = () => {
           sx={{ alignSelf: "flex-start" }}
           variant="outlined"
           endIcon={<SendIcon />}
-          onClick={() => {}}
+          onClick={handleUser}
         >
           Send
         </Button>
