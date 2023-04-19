@@ -14,13 +14,16 @@ import Footer from "./Components/Footer";
 import Login from "./Components/Login";
 import About from "./Components/About";
 import Training from "./Components/Training";
+import TrainingSection from "./Components/Atoms/TrainingSection";
 function App() {
   const router = createBrowserRouter(
     createRoutesFromElements(
       <Route path="/" element={<Root />}>
-        <Route index path="/home" element={<Home />} />
+        <Route index path="/" element={<Home />} />
+        <Route path="/home" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/pricing" element={<Pricing />} />
+        <Route path="/program" element={<TrainingSection />} />
         <Route path="/training" element={<Training />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
