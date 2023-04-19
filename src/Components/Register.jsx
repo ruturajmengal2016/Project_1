@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import TextField from "@mui/material/TextField";
 import Style from "./Styles/Register.module.css";
 import Button from "@mui/material/Button";
@@ -13,8 +13,10 @@ const Register = () => {
     name: joi.string().max(20).required(),
     email: joi.string(),
     password: joi.string().pattern(new RegExp("^[a-zA-Z0-9]")),
-  })
-  useEffect(() => {
+  });
+
+  const validate = () => {
+    setData([...data, details]);
     schema
       .validateAsync(data[0])
       .then((res) => {
@@ -23,7 +25,8 @@ const Register = () => {
       .catch((error) => {
         alert(error);
       });
-  }, [data]);
+  };
+
   return (
     <div className={Style.root}>
       <img
@@ -85,7 +88,7 @@ const Register = () => {
           endIcon={<SendIcon />}
           onClick={(e) => {
             e.preventDefault();
-            setData([...data, details]);
+            validate();
           }}
         >
           Send

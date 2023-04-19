@@ -1,33 +1,15 @@
-import React, { useEffect, useState } from "react";
+import React, {useState } from "react";
 import TextField from "@mui/material/TextField";
 import Style from "./Styles/Register.module.css";
 import Button from "@mui/material/Button";
 import SendIcon from "@mui/icons-material/Send";
 import { Typography } from "@mui/material";
 import { useNavigate } from "react-router-dom";
-import joi from "joi";
 
 const Login = () => {
   const [details, setDetails] = useState({ email: "", password: "" });
   const [data, setData] = useState([]);
-  const schema = joi.object({
-    email: joi.string(),
-    password: joi.string().pattern(new RegExp("^[a-zA-Z0-9]")),
-  });
   const navigate = useNavigate();
-  useEffect(() => {
-    schema
-      .validateAsync(data[0])
-      .then((res) => {
-        const exist = localStorage.getItem(JSON.stringify(data[0].email));
-        if (exist) {
-          navigate("/home");
-        }
-      })
-      .catch((err) => {
-        alert(err);
-      });
-  }, [data]);
   return (
     <div className={Style.root}>
       <img
