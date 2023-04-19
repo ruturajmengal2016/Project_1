@@ -3,9 +3,10 @@ import Style from "./Styles/About.module.css";
 import Gym1 from "./Videos/gym1.mp4";
 import Gym2 from "./Videos/gym2.mp4";
 import { Button } from "@mui/material";
+
 const About = () => {
   return (
-    <div className={Style.root}>
+    <div className={Style.root}>          
       <div className={Style.first}>
         <div className={Style.one}>
           <video
