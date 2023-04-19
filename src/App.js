@@ -6,26 +6,28 @@ import {
   RouterProvider,
   Outlet,
 } from "react-router-dom";
-import Pricing from "./Components/Pricing";
+//importing react router dom for navigation
+
+import Pricing from "./Components/Pricing"; //pages
 import Navigation from "./Components/Navigation";
-import Home from "./Components/Home";
-import Register from "./Components/Register";
+import Home from "./Components/Home"; //pages
+import Register from "./Components/Register"; //pages
 import Footer from "./Components/Footer";
-import Login from "./Components/Login";
-import About from "./Components/About";
-import Training from "./Components/Training";
-import TrainingSection from "./Components/Atoms/TrainingSection";
+import Login from "./Components/Login"; //pages
+import About from "./Components/About"; //pages
+import Training from "./Components/Training"; //pages
+import TrainingSection from "./Components/Atoms/TrainingSection"; //pages
 function App() {
   const router = createBrowserRouter(
     createRoutesFromElements(
       <Route path="/" element={<Root />}>
-        <Route index path="/" element={<Home />} />
+        <Route path="/" element={<Home />} />
         <Route path="/home" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/pricing" element={<Pricing />} />
         <Route path="/program" element={<TrainingSection />} />
         <Route path="/training" element={<Training />} />
-        <Route path="/login" element={<Login />} />
+        <Route index path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
       </Route>
     )
