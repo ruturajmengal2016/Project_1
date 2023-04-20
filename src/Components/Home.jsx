@@ -1,9 +1,6 @@
-import React,{useEffect} from "react";
+import React from "react";
 import Style from "./Styles/Home.module.css";
 const Home = () => {
-  useEffect(()=>{
-    localStorage.setItem("user",JSON.stringify([]))
-  },[])
   return (
     <div className={Style.root}>
       <h1 className={Style.heading}>
