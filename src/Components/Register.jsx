@@ -16,16 +16,30 @@ const Register = () => {
     email: joi.string(),
     password: joi.string().pattern(new RegExp("[a-zA-Z0-9]")),
   });
+
+  const exist = () => {
+    const user = JSON.parse(localStorage.getItem("user"));
+    user.find((ele, index) => {
+      if (ele.email === details.email) {
+        return false;
+      }
+    });
+    return true;
+  };
   const handleChange = () => {
-    const values = [...data, details];    
+    const values = [...data, details];
     setData(values);
-    schema
-      .validateAsync(details)
-      .then((res) => {
-        localStorage.setItem("user", JSON.stringify(values));
-        navigate("/login");
-      })
-      .catch((err) => alert(err));
+    if (exist()) {
+      schema
+        .validateAsync(details)
+        .then((res) => {
+          localStorage.setItem("user", JSON.stringify(values));
+          navigate("/login");
+        })
+        .catch((err) => alert(err));
+    } else {
+      alert("This email is already register!");
+    }
   };
   return (
     <div className={Style.root}>
