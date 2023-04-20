@@ -5,25 +5,27 @@ import Button from "@mui/material/Button";
 import SendIcon from "@mui/icons-material/Send";
 import { Typography } from "@mui/material";
 import joi from "joi";
-import { useNavigate } from "react-router-dom";
 const Register = () => {
   const [data, setData] = useState([]);
   const [details, setDetails] = useState({ name: "", email: "", password: "" });
-  const navigate = useNavigate();
 
   const schema = joi.object({
     name: joi.string().max(20).required(),
-    email: joi.string(),
+    email: joi
+      .string()
+      .email({ minDomainSegments: 2, tlds: { allow: ["com", "net"] } }),
     password: joi.string().pattern(new RegExp("[a-zA-Z0-9]")),
   });
+
   const handleChange = () => {
-    const values = [...data, details];    
+    const values = [...data, details];
     setData(values);
     schema
       .validateAsync(details)
       .then((res) => {
         localStorage.setItem("user", JSON.stringify(values));
-        navigate("/login");
+        alert("You register successfully...");
+        setDetails({ ...details, name: "", email: "", password: "" });
       })
       .catch((err) => alert(err));
   };
@@ -76,6 +78,7 @@ const Register = () => {
           }}
         />
         <TextField
+          type="password"
           name="password"
           label="Password"
           variant="filled"
