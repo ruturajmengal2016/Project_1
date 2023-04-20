@@ -17,7 +17,7 @@ const Register = () => {
     password: joi.string().pattern(new RegExp("[a-zA-Z0-9]")),
   });
 
-  const handleChange = () => {
+const handleChange = () => {
     const values = [...data, details];
     setData(values);
     schema
