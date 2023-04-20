@@ -1,4 +1,4 @@
-import React, { useState,useEffect } from "react";
+import React, { useState } from "react";
 import TextField from "@mui/material/TextField";
 import Style from "./Styles/Register.module.css";
 import Button from "@mui/material/Button";
@@ -11,14 +11,18 @@ const Login = () => {
   const [data, setData] = useState([]);
   const navigate = useNavigate();
   function handleUser() {
-    setData([...data,details])
+    setData([...data, details]);
     const user = JSON.parse(localStorage.getItem("user"));
-    user.find((ele) => {
+    if (user === null) {
+      alert("You don't have an account");
+      return -1;
+    }
+    user.find((ele,index) => {
       if (ele.email === details.email) {
         navigate("/home");
-      }else{
-        alert("You don't have an account")
-        return -1
+      } else {
+        alert("You don't have an account");
+        return -1;
       }
     });
   }
