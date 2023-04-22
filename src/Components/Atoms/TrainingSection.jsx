@@ -70,6 +70,7 @@ const TrainingSection = () => {
         />
       </div>
       <Button
+      className={Style.button}
         variant="outlined"
         onClick={() => {
           div.current.scrollLeft += 700;

@@ -47,6 +47,7 @@ const Login = () => {
             textAlign: "center",
             alignSelf: "flex-start",
             fontWeight: "bold",
+            fontSize:"2rem"
           }}
         >
           LOG IN
@@ -74,7 +75,6 @@ const Login = () => {
           }}
         />
         <Button
-          sx={{ alignSelf: "flex-start" }}
           variant="outlined"
           endIcon={<SendIcon />}
           onClick={handleUser}

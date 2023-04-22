@@ -1,15 +1,16 @@
 import React from "react";
 import Style from "../Styles/Pricing.module.css";
 import { BsCheckCircle } from "react-icons/bs";
+import Button from "@mui/material/Button";
 const Second = () => {
   return (
-    <div className={Style.first_second}>
-      <span id={Style.one}>Month to Month</span>
-      <span id={Style.two}>
+    <div className={Style.second}>
+      <h2>Month to Month</h2>
+      <span className={Style.number}>
         <sup>$</sup> 90
       </span>
-      <em id={Style.three}>/month</em>
-      <ul id={Style.four}>
+      <em>/month</em>
+      <ul>
         <li>
           <BsCheckCircle color="green" /> $99 joing fee
         </li>
@@ -26,7 +27,9 @@ const Second = () => {
           <BsCheckCircle color="green" /> 24 Hours Access
         </li>
       </ul>
-      <button>Get Started</button>
+      <Button variant="contained" className={Style.button}>
+        Get Started
+      </Button>
     </div>
   );
 };
