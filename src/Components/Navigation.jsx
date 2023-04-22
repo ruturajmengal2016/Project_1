@@ -4,7 +4,7 @@ import Style from "./Styles/Navigation.module.css";
 import Button from "@mui/material/Button";
 import { GiHamburgerMenu } from "react-icons/gi";
 const Navigation = () => {
-  const [value, setValue] = useState(false);
+  const [value, setValue] = useState(true);
   const navigate = useNavigate();
   return (
     <div className={Style.root}>
@@ -12,15 +12,12 @@ const Navigation = () => {
         onClick={() => {
           navigate("/home");
         }}
+        style={{ cursor: "pointer" }}
       >
         GYM
       </h2>
       <div
-        className={
-          value
-            ? `${Style.routes} ${Style.show}`
-            : `${Style.routes} ${Style.hide}`
-        }
+        className={value ? `${Style.routes}` : `${Style.routes} ${Style.hide}`}
       >
         <Link to="/home" className={Style.link}>
           Home
@@ -44,15 +41,12 @@ const Navigation = () => {
         }}
         variant="contained"
         sx={{ backgroundColor: "blue" }}
-        className={
-          value
-            ? `${Style.button} ${Style.show}`
-            : `${Style.button} ${Style.hide}`
-        }
+        className={Style.button}
       >
         Join Us
       </Button>
       <GiHamburgerMenu
+        size={30}
         className={Style.menu}
         onClick={() => {
           setValue(!value);

@@ -25,3 +25,15 @@
   gap: 1rem;
   max-width: 84%;
 }
+
+@media screen and (max-width: 600px) {
+  .root {
+    width: 100%;
+  }
+  .button {
+    align-self: flex-start;
+  }
+  .discription {
+    padding: 1rem;
+  }
+}
