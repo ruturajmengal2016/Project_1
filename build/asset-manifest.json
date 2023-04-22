@@ -1,17 +1,24 @@
 {
   "files": {
-    "main.css": "/static/css/main.274f6ea4.css",
-    "main.js": "/static/js/main.ba13df79.js",
+    "main.css": "/static/css/main.79cea69d.css",
+    "main.js": "/static/js/main.c21f7a74.js",
     "static/js/787.142da1d4.chunk.js": "/static/js/787.142da1d4.chunk.js",
     "static/media/gym2.mp4": "/static/media/gym2.f3b19b32261a02e4b5c6.mp4",
     "static/media/gym1.mp4": "/static/media/gym1.b11eb65c4f660b0e3717.mp4",
+    "static/media/MarkJacobi.jpeg": "/static/media/MarkJacobi.071fae7e0e3b2298461e.jpeg",
+    "static/media/ElnaReilly.jpeg": "/static/media/ElnaReilly.42498aeca1c0bb97490d.jpeg",
+    "static/media/AdamKlocko.jpeg": "/static/media/AdamKlocko.b5b9e5646b675d2c6e6e.jpeg",
+    "static/media/ShanelCrooks.jpeg": "/static/media/ShanelCrooks.33405c9c5cc8fe86fb6d.jpeg",
+    "static/media/EmiliaNicolas.jpeg": "/static/media/EmiliaNicolas.33ad7c665d939f55358f.jpeg",
+    "static/media/ElliotBarrett.jpeg": "/static/media/ElliotBarrett.a96573e656a2c72e9641.jpeg",
+    "static/media/LeightonNorman.jpeg": "/static/media/LeightonNorman.6bb4e30879309cc83e5c.jpeg",
     "index.html": "/index.html",
-    "main.274f6ea4.css.map": "/static/css/main.274f6ea4.css.map",
-    "main.ba13df79.js.map": "/static/js/main.ba13df79.js.map",
+    "main.79cea69d.css.map": "/static/css/main.79cea69d.css.map",
+    "main.c21f7a74.js.map": "/static/js/main.c21f7a74.js.map",
     "787.142da1d4.chunk.js.map": "/static/js/787.142da1d4.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.274f6ea4.css",
-    "static/js/main.ba13df79.js"
+    "static/css/main.79cea69d.css",
+    "static/js/main.c21f7a74.js"
   ]
 }

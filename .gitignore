@@ -10,6 +10,7 @@
 
 # production
 /package-lock.json
+Images
 # misc
 .DS_Store
 .env.local
