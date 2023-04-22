@@ -6,7 +6,7 @@ import { Button } from "@mui/material";
 
 const About = () => {
   return (
-    <div className={Style.root}>          
+    <div className={Style.root}>
       <div className={Style.first}>
         <div className={Style.one}>
           <video
@@ -28,7 +28,13 @@ const About = () => {
             voluptatem, quasi illo iusto ea quas praesentium aliquid,
             necessitatibus cumque nesciunt corporis.
           </p>
-          <Button variant="contained" sx={{ backgroundColor: "red" }}>
+          <Button
+            variant="contained"
+            sx={{ backgroundColor: "red" }}
+            onClick={() => {
+              alert("clicked from about us section!");
+            }}
+          >
             Learn More
           </Button>
         </div>
