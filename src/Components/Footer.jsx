@@ -13,24 +13,17 @@ const Footer = () => {
             Lorem ipsum dolor sit amet.
           </span>
           <span className={Style.media}>
-            <BsFacebook
-              size={25}
-              fill="blue"
-              href="https://www.facebook.com"
-              target="_blank"
-            />
-            <GrInstagram
-              size={25}
-              fill="pink"
-              href="https://www.instagram.com/"
-              target="_blank"
-            />
-            <FiTwitter
-              size={25}
-              fill="blue"
-              href="https://www.twitter.com"
-              target="_blank"
-            />
+            <a href="https://www.facebook.com" target="_blank">
+              <BsFacebook size={25} fill="blue" />
+            </a>
+
+            <a href="https://www.instagram.com/" target="_blank">
+              <GrInstagram size={25} fill="pink" />
+            </a>
+
+            <a href="https://www.twitter.com" target="_blank">
+              <FiTwitter size={25} fill="blue" />
+            </a>
           </span>
         </div>
         <div id={Style.two}>
