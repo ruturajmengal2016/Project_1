@@ -1,0 +1,49 @@
+.root {
+  height: 100vh;
+  max-height: fit-content;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 20rem 20rem;
+  padding: 0.7rem;
+  gap: 1rem;
+  overflow: auto;
+}
+
+.first {
+  height: 100%;
+  width: 100%;
+}
+
+.first video {
+  object-fit: cover;
+  height: 90%;
+  width: 100%;
+}
+
+.second {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
+  box-sizing: border-box;
+  height: 100%;
+  width: 100%;
+}
+
+.second p {
+  font-size: 1.5rem;
+}
+
+.three {
+  width: fit-content;
+}
+
+@media screen and (max-width: 600px) {
+  .root {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto auto;
+  }
+  .video {
+    width: "500";
+  }
+}
