@@ -10,19 +10,23 @@ const Register = () => {
   const [data, setData] = useState([]);
   const [details, setDetails] = useState({ name: "", email: "", password: "" });
   const navigate = useNavigate();
-
   const schema = joi.object({
-    name: joi.string().max(20).required(),
-    email: joi.string(),
+    name: joi.string().max(20).required().trim(),
+    email: joi
+      .string()
+      .email({ minDomainSegments: 2, tlds: { allow: ["com", "net"] } }),
     password: joi.string().pattern(new RegExp("[a-zA-Z0-9]")),
   });
+
   const handleChange = () => {
-    const values = [...data, details];    
+    const values = [...data, details];
     setData(values);
     schema
       .validateAsync(details)
-      .then((res) => {
+      .then(() => {
         localStorage.setItem("user", JSON.stringify(values));
+        alert("You register successfully...");
+        setDetails({ name: " ", email: " ", password: " " });
         navigate("/login");
       })
       .catch((err) => alert(err));
@@ -48,6 +52,7 @@ const Register = () => {
             textAlign: "center",
             alignSelf: "flex-start",
             fontWeight: "bold",
+            fontSize: "2rem",
           }}
         >
           SIGN UP
@@ -76,6 +81,7 @@ const Register = () => {
           }}
         />
         <TextField
+          type="password"
           name="password"
           label="Password"
           variant="filled"

@@ -25,3 +25,16 @@
   gap: 1rem;
   max-width: 84%;
 }
+
+@media screen and (max-width: 600px) {
+  .trainers {
+    flex-direction: column;
+    height: fit-content;
+  }
+  .discription {
+    padding: 1rem;
+  }
+  .button {
+    display: none;
+  }
+}

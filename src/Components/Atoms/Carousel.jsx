@@ -23,7 +23,7 @@ const Carousel = () => {
           }}
           fill="red"
           size={30}
-          style={{ position: "fixed", top: "50%", cursor: "pointer" }}
+          style={{ position: "fixed", top: "50%", cursor: "pointer"}}
         />
         <img
           src="https://images.pexels.com/photos/7690215/pexels-photo-7690215.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"

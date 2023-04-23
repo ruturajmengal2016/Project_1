@@ -74,6 +74,7 @@ const TrainingSection = () => {
         onClick={() => {
           div.current.scrollLeft += 700;
         }}
+        className={Style.button}
       >
         SEE THE WHOLE TEAM
       </Button>

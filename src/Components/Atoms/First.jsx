@@ -1,15 +1,16 @@
 import React from "react";
 import Style from "../Styles/Pricing.module.css";
-import {BsCheckCircle} from "react-icons/bs";
+import { BsCheckCircle } from "react-icons/bs";
+import Button from "@mui/material/Button";
 const First = () => {
   return (
-    <div className={Style.first_one}>
-      <span id={Style.one}>Day Pass</span>
-      <span id={Style.two}>
-        <sup>$</sup> 20
-      </span>
-      <em id={Style.three}>/pass</em>
-      <ul id={Style.four}>
+    <div className={Style.first}>
+      <h2>Day Pass</h2>
+      <div className={Style.number}>
+        <sup>$</sup>20
+      </div>
+      <em>/pass</em>
+      <ul>
         <li>
           <BsCheckCircle /> 1 Day Pass
         </li>
@@ -20,7 +21,9 @@ const First = () => {
           <BsCheckCircle /> 24 Hours Access
         </li>
       </ul>
-      <button>Get Started</button>
+        <Button variant="contained" className={Style.button}>
+          Get Started
+        </Button>
     </div>
   );
 };

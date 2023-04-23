@@ -1,4 +1,5 @@
 .root {
+  z-index: 2;
   height: 8vh;
   display: flex;
   align-items: center;
@@ -36,30 +37,26 @@ h2 {
 }
 
 @media screen and (max-width: 600px) {
+  .root {
+  }
   .routes {
-    position: absolute;
-    flex-direction: column;
-    top: 5rem;
-    right: 1rem;
     align-items: flex-end;
+    flex-direction: column;
+    position: absolute;
+    left: 45%;
+    top: 100%;
+  }
+  .link {
+    color: blue;
   }
   .button {
-    position: relative;
-    left: 13.5rem;
-    top: 13rem;
-  }
-
-  .menu {
-    display: inline-block;
+    position: absolute;
+    right: 20%;
   }
   .hide {
-    transform: translateX(10rem);
+    display: none;
   }
-  .show {
-    transform: translateX(0);
+  .menu {
+    display: inline;
   }
-}
-a:active{
-  color:yellow;
-
 }

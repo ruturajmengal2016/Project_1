@@ -7,11 +7,9 @@ import Third from "./Atoms/Third";
 const Pricing = () => {
   return (
     <div className={Style.root}>
-      <div className={Style.first}>
-        <First />
-        <Second />
-        <Third />
-      </div>
+      <First />
+      <Second />
+      <Third />
     </div>
   );
 };
