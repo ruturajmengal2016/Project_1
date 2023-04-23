@@ -15,6 +15,9 @@ const Carousel = () => {
           objectFit: "cover",
           position: "relative",
           scrollBehavior: "smooth",
+          height: "100vh",
+          maxHeight: "fit-content",
+          maxWidth: "fit-content",
         }}
       >
         <BsFillArrowLeftSquareFill

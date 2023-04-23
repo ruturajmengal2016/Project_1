@@ -2,7 +2,7 @@
   height: 100vh;
   max-height: fit-content;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
   align-items: center;
   flex-direction: column;
   background: rgb(2, 0, 36);
@@ -23,17 +23,18 @@
   display: flex;
   justify-content: center;
   gap: 1rem;
-  max-width: 84%;
+  width: 80%;
 }
 
 @media screen and (max-width: 600px) {
-  .root {
-    width: 100%;
-  }
   .button {
-    align-self: flex-start;
+    visibility: hidden;
   }
   .discription {
     padding: 1rem;
+  }
+  .trainers {
+    flex-direction: column;
+    max-height: fit-content;
   }
 }

@@ -1,6 +1,6 @@
 import React from "react";
 import { BsArrowRight } from "react-icons/bs";
-const ImageBlock = ({ img1, name, profession }) => {
+const ImageBlock = ({ img, name, profession }) => {
   return (
     <div
       style={{
@@ -10,9 +10,9 @@ const ImageBlock = ({ img1, name, profession }) => {
       }}
     >
       <img
-        src={img1}
+        src={img}
         alt="images"
-        style={{ height: "15rem", width: "15rem", objectFit: "cover" }}
+        style={{ height: "15rem", minWidth: "15rem", objectFit: "cover" }}
       />
       <span
         style={{
