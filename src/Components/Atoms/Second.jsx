@@ -1,8 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
+import { useNavigate } from "react-router-dom";
 import Style from "../Styles/Pricing.module.css";
 import { BsCheckCircle } from "react-icons/bs";
 import Button from "@mui/material/Button";
+import { dataRoot } from "../../App";
 const Second = () => {
+  const { details, setDetails } = useContext(dataRoot);
+  const navigate = useNavigate();
   return (
     <div className={Style.second}>
       <h2>Month to Month</h2>
@@ -27,8 +31,20 @@ const Second = () => {
           <BsCheckCircle color="green" /> 24 Hours Access
         </li>
       </ul>
-      <Button variant="contained" className={Style.button}>
-        Get Started
+      <Button
+        variant="contained"
+        className={Style.button}
+        onClick={() => {
+          if (details.text === "JOIN US") {
+            navigate("/register");
+          }
+          if (details.text === "subscribed") {
+            setDetails({ ...details, subscribed: true, text:"Get Started"});
+            navigate("/home");
+          }
+        }}
+      >
+        {details.subscribed ? details.text : details.text}
       </Button>
     </div>
   );

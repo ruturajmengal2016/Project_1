@@ -12,9 +12,8 @@ const About = () => {
           height="315"
           src="https://www.youtube.com/embed/eaRQF-7hhmo"
           title="YouTube video player"
-          frameborder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowfullscreen
+          allowFullScreen
         ></iframe>
       </div>
       <div className={Style.second}>
@@ -75,9 +74,8 @@ const About = () => {
           height="315"
           src="https://www.youtube.com/embed/JjvN_hYDp3g"
           title="YouTube video player"
-          frameborder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowfullscreen
+          allowFullScreen
         ></iframe>
       </div>
     </div>

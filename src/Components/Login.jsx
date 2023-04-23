@@ -1,14 +1,13 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
 import TextField from "@mui/material/TextField";
 import Style from "./Styles/Register.module.css";
 import Button from "@mui/material/Button";
 import SendIcon from "@mui/icons-material/Send";
 import { Typography } from "@mui/material";
 import { useNavigate } from "react-router-dom";
-
+import { dataRoot } from "../App";
 const Login = () => {
-  const [details, setDetails] = useState({ email: "", password: "" });
-  const [data, setData] = useState([]);
+  const { data, setData, details, setDetails } = useContext(dataRoot);
   const navigate = useNavigate();
   function handleUser() {
     setData([...data, details]);
@@ -17,8 +16,9 @@ const Login = () => {
       alert("You don't have an account");
       return -1;
     }
-    user.find((ele,index) => {
+    user.find((ele, index) => {
       if (ele.email === details.email) {
+        setDetails({ ...details, text: "subscribed" });
         navigate("/home");
       } else {
         alert("You don't have an account");
@@ -47,7 +47,7 @@ const Login = () => {
             textAlign: "center",
             alignSelf: "flex-start",
             fontWeight: "bold",
-            fontSize:"2rem"
+            fontSize: "2rem",
           }}
         >
           LOG IN
@@ -74,11 +74,7 @@ const Login = () => {
             setDetails({ ...details, [e.target.name]: e.target.value });
           }}
         />
-        <Button
-          variant="outlined"
-          endIcon={<SendIcon />}
-          onClick={handleUser}
-        >
+        <Button variant="outlined" endIcon={<SendIcon />} onClick={handleUser}>
           Send
         </Button>
         <Typography

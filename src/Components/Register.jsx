@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
 import TextField from "@mui/material/TextField";
 import Style from "./Styles/Register.module.css";
 import Button from "@mui/material/Button";
@@ -6,9 +6,10 @@ import SendIcon from "@mui/icons-material/Send";
 import { Typography } from "@mui/material";
 import joi from "joi";
 import { useNavigate } from "react-router-dom";
+import { dataRoot } from "../App";
+
 const Register = () => {
-  const [data, setData] = useState([]);
-  const [details, setDetails] = useState({ name: "", email: "", password: "" });
+  const { data, setData, details, setDetails } = useContext(dataRoot);
   const navigate = useNavigate();
   const schema = joi.object({
     name: joi.string().max(20).required().trim(),
@@ -16,18 +17,38 @@ const Register = () => {
       .string()
       .email({ minDomainSegments: 2, tlds: { allow: ["com", "net"] } }),
     password: joi.string().pattern(new RegExp("[a-zA-Z0-9]")),
+    subscribed: joi.bool(),
+    text: joi.string(),
   });
-
   const handleChange = () => {
     const values = [...data, details];
     setData(values);
     schema
       .validateAsync(details)
       .then(() => {
+        const user = localStorage.getItem("user");
+        if (user === null) {
+          localStorage.setItem("user", JSON.stringify(values));
+          alert("You register successfully...");
+          setDetails({ ...details, text: "subscribed" });
+          setDetails({ name: " ", email: " ", password: " " });
+          navigate("/login");
+        } else {
+          JSON.parse(user).find((ele, ind) => {
+            if (ele.email === details.email) {
+              throw new Error("user already exist");
+            }
+            return 1;
+          });
+        }
+      })
+      .then(() => {
         localStorage.setItem("user", JSON.stringify(values));
-        alert("You register successfully...");
         setDetails({ name: " ", email: " ", password: " " });
         navigate("/login");
+      })
+      .then(() => {
+        alert("You register successfully...");
       })
       .catch((err) => alert(err));
   };

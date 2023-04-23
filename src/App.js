@@ -17,7 +17,18 @@ import Login from "./Components/Login"; //pages
 import About from "./Components/About"; //pages
 import Training from "./Components/Training"; //pages
 import TrainingSection from "./Components/Atoms/TrainingSection"; //pages
+import { createContext, useState } from "react";
+
+export const dataRoot = createContext();
 function App() {
+  const [data, setData] = useState([]);
+  const [details, setDetails] = useState({
+    name: "",
+    email: "",
+    password: "",
+    subscribed: false,
+    text:"JOIN US"
+  });
   const router = createBrowserRouter(
     createRoutesFromElements(
       <Route path="/" element={<Root />}>
@@ -33,9 +44,11 @@ function App() {
     )
   );
   return (
-    <div className="App">
-      <RouterProvider router={router} />
-    </div>
+    <dataRoot.Provider value={{ data, setData, details, setDetails }}>
+      <div className="App">
+        <RouterProvider router={router} />
+      </div>
+    </dataRoot.Provider>
   );
 }
 
