@@ -27,13 +27,14 @@
 }
 
 @media screen and (max-width: 600px) {
-  .root {
-    width: 100%;
-  }
   .button {
-    align-self: flex-start;
+    visibility: hidden;
   }
   .discription {
     padding: 1rem;
+  }
+  .trainers {
+    flex-direction: column;
+    max-height: fit-content;
   }
 }
