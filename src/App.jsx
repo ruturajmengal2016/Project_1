@@ -7,13 +7,13 @@ import {
 } from "react-router-dom";
 import Navigation from "./Components/Navigation";
 import Footer from "./Components/Footer";
-import Home from "./Components/Pages/Home";
-import About from "./Components/Pages/About";
-import Pricing from "./Components/Pages/Pricing";
-import Training from "./Components/Pages/Training";
-import Trainners from "./Components/Pages/Trainners";
-import Login from "./Components/Pages/Login";
-import Register from "./Components/Pages/Register";
+import Home from "./Pages/Home";
+import About from "./Pages/About";
+import Pricing from "./Pages/Pricing";
+import Training from "./Pages/Training";
+import Trainners from "./Pages/Trainners";
+import Login from "./Pages/Login";
+import Register from "./Pages/Register";
 function App() {
   const router = createBrowserRouter(
     createRoutesFromElements(

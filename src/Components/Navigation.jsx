@@ -121,22 +121,20 @@ function Navigation() {
           </Box>
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Register">
-              <IconButton sx={{ p: 0 }}>
-                <Button
-                  onClick={() => {
-                    navigate("/register");
-                  }}
-                  variant="contained"
-                  sx={{
+              <Button
+                onClick={() => {
+                  navigate("/register");
+                }}
+                variant="contained"
+                sx={{
+                  bgcolor: "red",
+                  "&:hover": {
                     bgcolor: "red",
-                    "&:hover": {
-                      bgcolor: "red",
-                    },
-                  }}
-                >
-                  JOIN US
-                </Button>
-              </IconButton>
+                  },
+                }}
+              >
+                JOIN US
+              </Button>
             </Tooltip>
           </Box>
         </Toolbar>
