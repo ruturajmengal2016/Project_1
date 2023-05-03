@@ -2,6 +2,9 @@ import * as React from "react";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
+import axios from "axios";
+
+
 export default function Register() {
   const [details, setDetails] = React.useState({
     Name: "",
@@ -33,8 +36,13 @@ export default function Register() {
         }}
         onSubmit={(e) => {
           e.preventDefault();
-          console.log(details);
+          // console.log(details);
+          axios.post("https://gym-server-v0ka.onrender.com/api/create",details)
+          .then((res) => console.log(res)).catch((error)=>{
+            console.log(error);
+          })
         }}
+
       >
         {fields.map((ele, ind) => {
           return (
