@@ -137,16 +137,6 @@ function Navigation() {
                 JOIN US
               </Button>
             </Tooltip>
-
-                    "&:hover": {
-                      bgcolor: "red",
-                    },
-                  }}
-                >
-                  JOIN US
-                </Button>
-              </IconButton>
-              </Tooltip>
           </Box>
         </Toolbar>
       </Container>
