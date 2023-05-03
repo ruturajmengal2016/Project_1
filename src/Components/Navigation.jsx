@@ -120,7 +120,6 @@ function Navigation() {
             ))}
           </Box>
           <Box sx={{ flexGrow: 0 }}>
-            <Tooltip title="Open settings">
               <IconButton sx={{ p: 0 }}>
                 <Button
                   variant="contained"
@@ -134,7 +133,6 @@ function Navigation() {
                   JOIN US
                 </Button>
               </IconButton>
-            </Tooltip>
           </Box>
         </Toolbar>
       </Container>
