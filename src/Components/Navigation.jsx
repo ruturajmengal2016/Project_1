@@ -137,7 +137,6 @@ function Navigation() {
                   JOIN US
                 </Button>
               </IconButton>
-            </Tooltip>
           </Box>
         </Toolbar>
       </Container>
