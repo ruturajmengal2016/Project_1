@@ -12,6 +12,8 @@ import About from "./Components/Pages/About";
 import Pricing from "./Components/Pages/Pricing";
 import Training from "./Components/Pages/Training";
 import Trainners from "./Components/Pages/Trainners";
+import Login from "./Components/Pages/Login";
+import Register from "./Components/Pages/Register";
 function App() {
   const router = createBrowserRouter(
     createRoutesFromElements(
@@ -30,6 +32,8 @@ function App() {
         <Route path="/pricing" element={<Pricing />} />
         <Route path="/training" element={<Training />} />
         <Route path="/trainners" element={<Trainners />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
       </Route>
     )
   );
