@@ -10,7 +10,6 @@ import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
-import AdbIcon from "@mui/icons-material/Adb";
 import { useNavigate } from "react-router-dom";
 const pages = ["Home", "About", "Pricing", "Training", "Trainners"];
 function Navigation() {
@@ -24,8 +23,8 @@ function Navigation() {
   };
 
   return (
-    <AppBar position="static">
-      <Container maxWidth="xl">
+    <AppBar position="sticky">
+      <Container maxWidth="xl" sx={{ bgcolor: "black" }}>
         <Toolbar disableGutters>
           <Typography
             variant="h6"
@@ -41,19 +40,15 @@ function Navigation() {
               color: "inherit",
               textDecoration: "none",
             }}
+            onClick={() => {
+              navigate("/");
+            }}
           >
             GYM
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
-            <IconButton
-              size="large"
-              aria-label="account of current user"
-              aria-controls="menu-appbar"
-              aria-haspopup="true"
-              onClick={handleOpenNavMenu}
-              color="inherit"
-            >
+            <IconButton onClick={handleOpenNavMenu} color="inherit">
               <MenuIcon />
             </IconButton>
             <Menu
@@ -75,15 +70,21 @@ function Navigation() {
               }}
             >
               {pages.map((page) => (
-                <MenuItem key={page} onClick={()=>{
-                    navigate("/about")
-                }}>
-                  <Typography textAlign="center">{page}</Typography>
+                <MenuItem key={page}>
+                  <Typography
+                    textAlign="center"
+                    component="div"
+                    onClick={() => {
+                      navigate(page === "Home" ? "" : `/${page.toLowerCase()}`);
+                      handleCloseNavMenu();
+                    }}
+                  >
+                    {page}
+                  </Typography>
                 </MenuItem>
               ))}
             </Menu>
           </Box>
-          <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
           <Typography
             variant="h5"
             noWrap
@@ -99,6 +100,9 @@ function Navigation() {
               color: "inherit",
               textDecoration: "none",
             }}
+            onClick={() => {
+              navigate("/");
+            }}
           >
             GYM
           </Typography>
@@ -106,18 +110,29 @@ function Navigation() {
             {pages.map((page) => (
               <Button
                 key={page}
-                onClick={handleCloseNavMenu}
+                onClick={() => {
+                  navigate(page === "Home" ? "" : `/${page.toLowerCase()}`);
+                }}
                 sx={{ my: 2, color: "white", display: "block" }}
               >
                 {page}
               </Button>
             ))}
           </Box>
-
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton sx={{ p: 0 }}>
-                <Button variant="contained">JOIN US</Button>
+                <Button
+                  variant="contained"
+                  sx={{
+                    bgcolor: "red",
+                    "&:hover": {
+                      bgcolor: "red",
+                    },
+                  }}
+                >
+                  JOIN US
+                </Button>
               </IconButton>
             </Tooltip>
           </Box>
