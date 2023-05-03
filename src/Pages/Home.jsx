@@ -1,4 +1,4 @@
-import Style from "../../Styles/Home.module.scss";
+import Style from "../Styles/Home.module.scss";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import About from "./About";
