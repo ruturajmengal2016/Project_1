@@ -36,7 +36,7 @@ const Home = () => {
               },
             }}
           >
-            Join us
+            
           </Button>
         </Typography>
       </div>
