@@ -22,13 +22,20 @@ const About = () => {
           allowFullScreen
         ></iframe>
       </Grid>
-      <Grid xs={10} sm={6} sx={{ fontSize: "2rem" }}>
+      <Grid xs={10} sm={6} sx={{ fontSize: "2rem" , fontWeight:"500"}}>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut, suscipit
         asperiores. Dicta ab ducimus cupiditate provident porro facere iste
         doloribus esse accusamus, tempora officiis hic accusantium distinctio
         itaque ea sint!
         <Button
           variant="contained"
+          sx={{
+            bgcolor: "red",
+            display: "block",
+            "&:hover": {
+              bgcolor: "red",
+            },
+          }}
           onClick={() => {
             alert("You clicked about more.");
           }}
