@@ -33,9 +33,9 @@ export default function Training() {
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
-          // gap: "1rem",
-          marginLeft: "1rem",
-          marginRight: "1rem",
+          gap: "1rem",
+          // marginLeft: "1rem",
+          // marginRight: "1rem",
           scrollBehavior: "smooth",
           boxSizing: "border-box",
           flexDirection: {
