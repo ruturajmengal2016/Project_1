@@ -7,7 +7,7 @@ const About = () => {
       justifyContent="center"
       sx={{
         height: "100vh",
-        maxHeight: "fit-content", 
+        maxHeight: "fit-content",
         padding: "0.5rem",
         overflow: "scroll",
       }}
@@ -46,7 +46,7 @@ const About = () => {
         <iframe
           width="90%"
           height="400rem"
-          src="https://www.youtube.com/embed/Y5RtQ4cawVk"
+          src="https://www.youtube.com/embed/-a4vyrtxr_U"
           title="YouTube video player"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           allowFullScreen
