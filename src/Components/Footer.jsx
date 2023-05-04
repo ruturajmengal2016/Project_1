@@ -16,6 +16,7 @@ export default function Footer() {
           xs: "column",
           sm: "row",
         },
+        alignItems: {xs :"center"},
         backgroundColor: "black",
         "&:hover": {
           backgroundColor: "black",
@@ -27,6 +28,7 @@ export default function Footer() {
           flex: "2",
           display: "flex",
           flexDirection: "column",
+          alignItems: {xs:"center"},
           gap: "1rem",
         }}
       >

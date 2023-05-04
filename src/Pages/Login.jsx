@@ -8,14 +8,7 @@ import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 export default function Login() {
   const nav = useNavigate();
-  // const user = JSON.parse(localStorage.getItem("users"));
-  // React.useEffect(() => {
-  //   if (user && user.email) {
-  //     nav("/home");
-  //   } else {
-  //     nav("/");
-  //   }
-  // },[]);
+ 
   const [details, setDetails] = React.useState({
     email: "",
     password: "",
@@ -71,11 +64,35 @@ export default function Login() {
             />
           );
         })}
-        <Button variant="contained" type="submit">
-          Send
+        <Button
+          variant="contained"
+          sx={{
+            color: "black",
+            backgroundColor: "red",
+            border: "none",
+            outline: "none",
+            borderRadius: "10px",
+            padding: "0.5rem 1.5rem",
+            "&:hover": {
+              backgroundColor: "red",
+              color: "grey",
+              boxShadow: "0 0 10px grey",
+              outline: "none",
+              border: "none",
+            },
+          }}
+          type="submit"
+        >
+          Login
         </Button>
         <Typography>
-          Not Have an Account? <Link to="/register">Register</Link>
+          Not Have an Account? 
+          <Link
+            style={{ textDecoration: "none", color: "black" }}
+            to="/register"
+          >
+            &nbsp; Register
+          </Link>
         </Typography>
       </form>
     </Box>

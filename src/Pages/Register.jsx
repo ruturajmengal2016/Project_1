@@ -3,12 +3,10 @@ import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { Typography } from "@mui/material";
 export default function Register() {
-
-
-  const nav=useNavigate();
+  const nav = useNavigate();
   const [details, setDetails] = React.useState({
     name: "",
     email: "",
@@ -45,11 +43,10 @@ export default function Register() {
             .post("https://gym-server-yi13.onrender.com/api/register", details)
             .then((res) => alert(res.data))
             .then(() => localStorage.setItem("users", JSON.stringify(details)))
-            .then(()=>{
-              nav("/")
+            .then(() => {
+              nav("/");
             })
             .catch((err) => alert(err.response.data));
-
         }}
       >
         {fields.map((ele, ind) => {
@@ -67,9 +64,33 @@ export default function Register() {
             />
           );
         })}
-        <Button variant="contained" type="submit">
+        <Button
+          variant="contained"
+          sx={{
+            color: "black",
+            backgroundColor: "red",
+            border: "none",
+            outline: "none",
+            borderRadius: "10px",
+            padding: "0.5rem 1.5rem",
+            "&:hover": {
+              backgroundColor: "red",
+              color: "grey",
+              boxShadow: "0 0 10px grey",
+              outline: "none",
+              border: "none",
+            },
+          }}
+          type="submit"
+        >
           Send
         </Button>
+        <Typography>
+          Already have an Account?{" "}
+          <Link style={{ textDecoration: "none", color: "black" }} to="/">
+            Log In
+          </Link>
+        </Typography>
       </form>
     </Box>
   );

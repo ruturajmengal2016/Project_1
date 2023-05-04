@@ -73,6 +73,10 @@ export default function Trainners() {
           onClick={handleClick}
           variant="contained"
           sx={{
+            bgcolor: "red",
+            "&:hover": {
+              bgcolor: "red",
+            },
             display: {
               xs: "none",
               sm: "flex",

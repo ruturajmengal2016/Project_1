@@ -1,10 +1,14 @@
+import * as React from "react";
 import Style from "../Styles/Home.module.scss";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import About from "./About";
 import Trainners from "./Trainners";
+import { useNavigate } from "react-router-dom";
 import Pricing from "./Pricing";
 const Home = () => {
+  const nav = useNavigate();
+
   return (
     <>
       <div className={Style.root}>

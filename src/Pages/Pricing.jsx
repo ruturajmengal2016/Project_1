@@ -1,8 +1,11 @@
+import * as React from "react";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import Style from "../Styles/Pricing.module.scss";
+
 const Pricing = () => {
+  
   return (
     <Box
       sx={{
@@ -49,7 +52,25 @@ const Pricing = () => {
           <li>Free Gym Access</li>
           <li>24 Hour Access</li>
         </ul>
-        <Button variant="outlined">Get Started</Button>
+        <Button
+          variant="outlined"
+          sx={{
+            color: "grey",
+            backgroundColor: "lightgreen",
+            border: "none",
+            outline: "none",
+            borderRadius: "10px",
+            "&:hover": {
+              backgroundColor: "lightgreen",
+              color: "grey",
+              boxShadow: "0 0 10px grey",
+              outline: "none",
+              border: "none",
+            },
+          }}
+        >
+          Get Started
+        </Button>
       </Typography>
       <Typography
         component="div"
@@ -81,7 +102,25 @@ const Pricing = () => {
           <li>1 Group Class Included</li>
           <li>24 Hours Access</li>
         </ul>
-        <Button variant="outlined">Get Started</Button>
+        <Button
+          variant="outlined"
+          sx={{
+            color: "grey",
+            backgroundColor: "lightgreen",
+            border: "none",
+            outline: "none",
+            borderRadius: "10px",
+            "&:hover": {
+              backgroundColor: "lightgreen",
+              color: "grey",
+              boxShadow: "0 0 10px grey",
+              outline: "none",
+              border: "none",
+            },
+          }}
+        >
+          Get Started
+        </Button>
       </Typography>
       <Typography
         component="div"
@@ -94,14 +133,35 @@ const Pricing = () => {
           paddingLeft: "1rem",
         }}
       >
-        <Typography variant="h4">Membership</Typography>
-        <div style={{ fontSize: "1.4rem" }}>
+        <Typography
+          variant="h4"
+          sx={{
+            marginBottom: "1rem",
+          }}
+        >
+          Membership
+        </Typography>
+        <Typography
+          component="div"
+          sx={{
+            fontSize: "1.4rem",
+            color: "#4F4557",
+            marginBottom: { xs: "1rem", sm: "0rem" },
+          }}
+        >
           At Gym Base, we offer a wide range of membership with options to suit
           every budget. Everything from One Day Pass. Punch Pass to monthly or
           annual prepaid memberships What more we would not the you in to a long
           term contract. giving you greater flexibilty.
-        </div>
-        <Typography variant="h4">Each plan included</Typography>
+        </Typography>
+        <Typography
+          variant="h4"
+          sx={{
+            margin: "1rem 0",
+          }}
+        >
+          Each plan included
+        </Typography>
         <ul className={Style.third}>
           <li>The Best equipment global brand</li>
           <li>The gym is open 24 hours a day , 7days a week</li>

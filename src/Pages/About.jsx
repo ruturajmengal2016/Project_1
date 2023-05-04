@@ -1,6 +1,8 @@
+import * as React from "react";
 import Grid from "@mui/material/Unstable_Grid2";
 import Button from "@mui/material/Button";
 const About = () => {
+
   return (
     <Grid
       container
@@ -22,13 +24,20 @@ const About = () => {
           allowFullScreen
         ></iframe>
       </Grid>
-      <Grid xs={10} sm={6} sx={{ fontSize: "2rem" }}>
+      <Grid xs={10} sm={6} sx={{ fontSize: "2rem" , fontWeight:"500"}}>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut, suscipit
         asperiores. Dicta ab ducimus cupiditate provident porro facere iste
         doloribus esse accusamus, tempora officiis hic accusantium distinctio
         itaque ea sint!
         <Button
           variant="contained"
+          sx={{
+            bgcolor: "red",
+            display: "block",
+            "&:hover": {
+              bgcolor: "red",
+            },
+          }}
           onClick={() => {
             alert("You clicked about more.");
           }}
