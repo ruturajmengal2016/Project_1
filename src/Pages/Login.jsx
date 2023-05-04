@@ -8,14 +8,14 @@ import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 export default function Login() {
   const nav = useNavigate();
-  const user = JSON.parse(localStorage.getItem("users"));
-  React.useEffect(() => {
-    if (user && user.email) {
-      nav("/");
-    } else {
-      nav("/register");
-    }
-  });
+  // const user = JSON.parse(localStorage.getItem("users"));
+  // React.useEffect(() => {
+  //   if (user && user.email) {
+  //     nav("/home");
+  //   } else {
+  //     nav("/");
+  //   }
+  // },[]);
   const [details, setDetails] = React.useState({
     email: "",
     password: "",
@@ -51,7 +51,7 @@ export default function Login() {
             .post("https://gym-server-yi13.onrender.com/api/login", details)
             .then((res) => alert(res.data))
             .then(() => {
-              nav("/");
+              nav("/home");
             })
             .catch((err) => alert(err.response.data));
         }}

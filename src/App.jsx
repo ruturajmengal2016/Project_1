@@ -21,18 +21,57 @@ function App() {
         path="/"
         element={
           <>
-            <Navigation />
             <Outlet />
             <Footer />
           </>
         }
       >
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/pricing" element={<Pricing />} />
-        <Route path="/training" element={<Training />} />
-        <Route path="/trainners" element={<Trainners />} />
-        <Route index path="/login" element={<Login />} />
+        <Route
+          path="/home"
+          element={
+            <>
+              <Navigation />
+              <Home />
+            </>
+          }
+        />
+        <Route
+          path="/about"
+          element={
+            <>
+              <Navigation />
+              <About />
+            </>
+          }
+        />
+        <Route
+          path="/pricing"
+          element={
+            <>
+              <Navigation />
+              <Pricing />
+            </>
+          }
+        />
+        <Route
+          path="/training"
+          element={
+            <>
+              <Navigation />
+              <Training />
+            </>
+          }
+        />
+        <Route
+          path="/trainners"
+          element={
+            <>
+              <Navigation />
+              <Trainners />
+            </>
+          }
+        />
+        <Route index path="/" element={<Login />} />
         <Route path="/register" element={<Register />} />
       </Route>
     )
