@@ -124,7 +124,7 @@ function Navigation() {
             <Tooltip title="Register">
               <Button
                 onClick={() => {
-                  navigate("/register");
+                  navigate("/login");
                 }}
                 variant="contained"
                 sx={{

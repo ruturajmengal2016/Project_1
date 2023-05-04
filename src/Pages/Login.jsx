@@ -2,10 +2,13 @@ import * as React from "react";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
+import axios from "axios";
+import { Typography } from "@mui/material";
+import { Link } from "react-router-dom";
 export default function Login() {
   const [details, setDetails] = React.useState({
-    Email: "",
-    Password: "",
+    email: "",
+    password: "",
   });
   const fields = ["Email", "Password"];
   return (
@@ -19,6 +22,7 @@ export default function Login() {
         alignItems: "center",
       }}
     >
+      <Typography variant="h4">SIGN IN</Typography>
       <form
         style={{
           display: "flex",
@@ -29,20 +33,24 @@ export default function Login() {
           boxSizing: "border-box",
           padding: "5rem",
           gap: "2rem",
+          borderRadius: "10% 0%",
         }}
-        onSubmit={(e) => {
-          e.preventDefault()
-          console.log(details);
+        onSubmit={async (e) => {
+          e.preventDefault();
+          await axios
+            .post("https://gym-server-yi13.onrender.com/api/login", details)
+            .then((res) => alert(res.data))
+            .catch((err) => alert(err.response.data));
         }}
       >
         {fields.map((ele, ind) => {
           return (
             <TextField
               label={ele}
-              name={ele}
+              name={ele.toLowerCase()}
               variant="outlined"
               key={ind}
-              placeholder={ele}
+              placeholder={ele.toUpperCase()}
               type={ele.toLowerCase()}
               onChange={(e) => {
                 setDetails({ ...details, [e.target.name]: e.target.value });
@@ -53,6 +61,9 @@ export default function Login() {
         <Button variant="contained" type="submit">
           Send
         </Button>
+        <Typography>
+          Not Have an Account? <Link to="/register">Register</Link>
+        </Typography>
       </form>
     </Box>
   );
