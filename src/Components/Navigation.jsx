@@ -11,18 +11,9 @@ import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import { useNavigate } from "react-router-dom";
-import { useEffect } from "react";
 const pages = ["Home", "About", "Pricing", "Training", "Trainners"];
 function Navigation() {
   const navigate = useNavigate();
-  const user = JSON.parse(localStorage.getItem("users"));
-  useEffect(() => {
-    if (user && user.email) {
-      navigate("/");
-    } else {
-      navigate("/register");
-    }
-  }, []);
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -50,7 +41,7 @@ function Navigation() {
               textDecoration: "none",
             }}
             onClick={() => {
-              navigate("/");
+              navigate("/home");
             }}
           >
             GYM
@@ -84,7 +75,7 @@ function Navigation() {
                     textAlign="center"
                     component="div"
                     onClick={() => {
-                      navigate(page === "Home" ? "" : `/${page.toLowerCase()}`);
+                      navigate(`/${page.toLowerCase()}`);
                       handleCloseNavMenu();
                     }}
                   >
@@ -120,7 +111,7 @@ function Navigation() {
               <Button
                 key={page}
                 onClick={() => {
-                  navigate(page === "Home" ? "" : `/${page.toLowerCase()}`);
+                  navigate(`/${page.toLowerCase()}`);
                 }}
                 sx={{ my: 2, color: "white", display: "block" }}
               >
@@ -132,7 +123,7 @@ function Navigation() {
             <Tooltip title="Register">
               <Button
                 onClick={() => {
-                  navigate("/login");
+                  navigate("/");
                 }}
                 variant="contained"
                 sx={{
