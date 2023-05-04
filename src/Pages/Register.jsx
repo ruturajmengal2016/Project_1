@@ -46,7 +46,7 @@ export default function Register() {
             .then((res) => alert(res.data))
             .then(() => localStorage.setItem("users", JSON.stringify(details)))
             .then(()=>{
-              nav("/login")
+              nav("/")
             })
             .catch((err) => alert(err.response.data));
 
