@@ -3,9 +3,11 @@ import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import Style from "../Styles/Pricing.module.scss";
-
+import { Sub } from "../App";
+import { useNavigate } from "react-router-dom";
 const Pricing = () => {
-  
+  const navigate = useNavigate();
+  const value = React.useContext(Sub);
   return (
     <Box
       sx={{
@@ -68,8 +70,18 @@ const Pricing = () => {
               border: "none",
             },
           }}
+          onClick={() => {
+            value.setter[1]("GET STARTED");
+            if (value.setter[0] === "JOIN US") {
+              navigate("/register");
+            } else if (value.setter[0] === "SUBSCRIBED") {
+              navigate("/home");
+            } else if (value.setter[0] === "GET STARTED") {
+              navigate("/training");
+            }
+          }}
         >
-          Get Started
+          {value.setter[0]}
         </Button>
       </Typography>
       <Typography
@@ -118,8 +130,18 @@ const Pricing = () => {
               border: "none",
             },
           }}
+          onClick={() => {
+            value.setter[1]("GET STARTED");
+            if (value.setter[0] === "JOIN US") {
+              navigate("/register");
+            } else if (value.setter[0] === "SUBSCRIBED") {
+              navigate("/home");
+            } else if (value.setter[0] === "GET STARTED") {
+              navigate("/training");
+            }
+          }}
         >
-          Get Started
+          {value.setter[0]}
         </Button>
       </Typography>
       <Typography

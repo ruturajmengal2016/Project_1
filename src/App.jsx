@@ -15,7 +15,13 @@ import Training from "./Pages/Training";
 import Trainners from "./Pages/Trainners";
 import Login from "./Pages/Login";
 import Register from "./Pages/Register";
+import { useState } from "react";
+export const Sub = createContext();
 function App() {
+  const [value, setValue] = useState("JOIN US");
+  const store = {
+    setter: [value, setValue],
+  };
   const router = createBrowserRouter(
     createRoutesFromElements(
       <Route
@@ -78,9 +84,9 @@ function App() {
     )
   );
   return (
-    <>
+    <Sub.Provider value={store}>
       <RouterProvider router={router} />
-    </>
+    </Sub.Provider>
   );
 }
 
