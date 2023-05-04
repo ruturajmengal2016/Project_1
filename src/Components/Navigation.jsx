@@ -11,11 +11,19 @@ import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 const pages = ["Home", "About", "Pricing", "Training", "Trainners"];
 function Navigation() {
-  
-  const [anchorElNav, setAnchorElNav] = React.useState(null);
   const navigate = useNavigate();
+  const user = JSON.parse(localStorage.getItem("users"));
+  useEffect(() => {
+    if (user && user.email) {
+      navigate("/");
+    } else {
+      navigate("/register");
+    }
+  }, []);
+  const [anchorElNav, setAnchorElNav] = React.useState(null);
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
