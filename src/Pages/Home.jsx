@@ -4,11 +4,13 @@ import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import About from "./About";
 import Trainners from "./Trainners";
-import { useNavigate } from "react-router-dom";
 import Pricing from "./Pricing";
-const Home = () => {
-  const nav = useNavigate();
+import { Sub } from "../App";
+import { useNavigate } from "react-router-dom";
 
+const Home = () => {
+  const navigate = useNavigate();
+  const value = React.useContext(Sub);
   return (
     <>
       <div className={Style.root}>
@@ -35,8 +37,17 @@ const Home = () => {
                 bgcolor: "red",
               },
             }}
+            onClick={() => {
+              if (value.setter[0] === "JOIN US") {
+                navigate("/register");
+              } else if (value.setter[0] === "SUBSCRIBED") {
+                navigate("/pricing");
+              } else if (value.setter[0] === "GET STARTED") {
+                navigate("/training");
+              }
+            }}
           >
-            
+            {value.setter[0]}
           </Button>
         </Typography>
       </div>
