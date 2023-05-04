@@ -3,13 +3,12 @@ import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import axios from "axios";
-
-
+import { Typography } from "@mui/material";
 export default function Register() {
   const [details, setDetails] = React.useState({
-    Name: "",
-    Email: "",
-    Password: "",
+    name: "",
+    email: "",
+    password: "",
   });
   const fields = ["Name", "Email", "Password"];
   return (
@@ -23,6 +22,7 @@ export default function Register() {
         alignItems: "center",
       }}
     >
+      <Typography variant="h4">SIGN UP</Typography>
       <form
         style={{
           display: "flex",
@@ -33,26 +33,26 @@ export default function Register() {
           boxSizing: "border-box",
           padding: "5rem",
           gap: "2rem",
+          borderRadius: "0% 10%",
         }}
-        onSubmit={(e) => {
+        onSubmit={async (e) => {
           e.preventDefault();
-          // console.log(details);
-          axios.post("https://gym-server-v0ka.onrender.com/api/create",details)
-          .then((res) => console.log(res)).catch((error)=>{
-            console.log(error);
-          })
+          await axios
+            .post("https://gym-server-yi13.onrender.com/api/register", details)
+            .then((res) => alert(res.data))
+            .then(() => localStorage.setItem("users", details))
+            .catch((err) => alert(err.response.data));
         }}
-
       >
         {fields.map((ele, ind) => {
           return (
             <TextField
-              label={ele}
-              name={ele}
+              label={ele.toUpperCase()}
+              name={ele.toLowerCase()}
               variant="outlined"
               key={ind}
-              placeholder={ele}
-              type={ele.toLowerCase()}
+              placeholder={ele.toUpperCase()}
+              type={ele}
               onChange={(e) => {
                 setDetails({ ...details, [e.target.name]: e.target.value });
               }}

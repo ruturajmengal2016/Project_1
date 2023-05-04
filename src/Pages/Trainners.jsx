@@ -8,12 +8,12 @@ import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 
 export default function Trainners() {
-  const [open, setOpen] = React.useState(true);
+  const [open, setOpen] = React.useState(false);
   const images = [
-    "https://media.istockphoto.com/id/1406538311/photo/stone-platform-pedestal-in-tropical-forest-for-product-presentation-and-green-forest.jpg?b=1&s=170667a&w=0&k=20&c=lOa0XgmUPqiVYQ3-XIUt5_EiwQYZmOwbtiEhbVCqm6g=",
-    "https://media.istockphoto.com/id/1406538311/photo/stone-platform-pedestal-in-tropical-forest-for-product-presentation-and-green-forest.jpg?b=1&s=170667a&w=0&k=20&c=lOa0XgmUPqiVYQ3-XIUt5_EiwQYZmOwbtiEhbVCqm6g=",
-    "https://media.istockphoto.com/id/1406538311/photo/stone-platform-pedestal-in-tropical-forest-for-product-presentation-and-green-forest.jpg?b=1&s=170667a&w=0&k=20&c=lOa0XgmUPqiVYQ3-XIUt5_EiwQYZmOwbtiEhbVCqm6g=",
-    "https://media.istockphoto.com/id/1406538311/photo/stone-platform-pedestal-in-tropical-forest-for-product-presentation-and-green-forest.jpg?b=1&s=170667a&w=0&k=20&c=lOa0XgmUPqiVYQ3-XIUt5_EiwQYZmOwbtiEhbVCqm6g=",
+    "https://images.pexels.com/photos/6740804/pexels-photo-6740804.jpeg",
+    "https://images.pexels.com/photos/7479781/pexels-photo-7479781.jpeg",
+    "https://images.pexels.com/photos/7592431/pexels-photo-7592431.jpeg",
+    "https://images.pexels.com/photos/6739127/pexels-photo-6739127.jpeg",
   ];
   const handleClick = () => {
     setOpen(!open);
@@ -45,17 +45,27 @@ export default function Trainners() {
           flexDirection: "column",
           gap: "1.3rem",
           alignItems: "center",
+          justifyContent: "center",
         }}
       >
         <Box
           sx={{
             display: "flex",
             gap: "1rem",
+            justifyContent: "center",
+            alignItems: "center",
             flexDirection: { xs: "column", sm: "row" },
           }}
         >
           {images.map((element, ind) => {
-            return <img src={element} key={ind} height={200} />;
+            return (
+              <img
+                style={{ minWidth: "30%" }}
+                src={element}
+                key={ind}
+                height={250}
+              />
+            );
           })}
         </Box>
 
@@ -72,14 +82,36 @@ export default function Trainners() {
           Show More
           {open ? <ExpandLess /> : <ExpandMore />}
         </Button>
-        <Collapse in={open} timeout="auto" unmountOnExit>
+        <Collapse
+          in={open}
+          timeout="auto"
+          unmountOnExit
+          sx={{
+            display: {
+              xs: "none",
+              sm: "flex",
+            },
+          }}
+        >
           <List
             component="div"
             disablePadding
-            sx={{ display: "flex", gap: "1rem" }}
+            sx={{
+              display: "flex",
+              gap: "1rem",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
           >
             {images.map((element, ind) => {
-              return <img src={element} key={ind} height={200} />;
+              return (
+                <img
+                  style={{ minWidth: "30%" }}
+                  src={element}
+                  key={ind}
+                  height={250}
+                />
+              );
             })}
           </List>
         </Collapse>
