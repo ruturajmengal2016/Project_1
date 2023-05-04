@@ -41,15 +41,8 @@ export default function Register() {
           e.preventDefault();
           await axios
             .post(
-              "https://gym-server-yi13.onrender.com/api/register",
-              details,
-              {
-                headers: {
-                  "Content-Type": "application/json",
-                },
-              }
-            )
-            .then((res) => console.log(res))
+              "https://gym-server-yi13.onrender.com/api/register",details)
+            .then((res) => alert(res.data))
             .then(() => localStorage.setItem("users", JSON.stringify(details)))
             .then(() => {
               nav("/");
