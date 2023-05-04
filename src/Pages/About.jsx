@@ -6,7 +6,7 @@ const About = () => {
       container
       justifyContent="center"
       sx={{
-        height: "100vh",
+        minHeight: "100vh",
         maxHeight: "fit-content",
         padding: "0.5rem",
         overflow: "scroll",
