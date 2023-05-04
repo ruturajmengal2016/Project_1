@@ -13,6 +13,7 @@ import MenuItem from "@mui/material/MenuItem";
 import { useNavigate } from "react-router-dom";
 const pages = ["Home", "About", "Pricing", "Training", "Trainners"];
 function Navigation() {
+  
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const navigate = useNavigate();
   const handleOpenNavMenu = (event) => {
