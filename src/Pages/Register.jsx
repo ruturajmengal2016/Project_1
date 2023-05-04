@@ -10,8 +10,7 @@ export default function Register() {
   const [details, setDetails] = React.useState({
     name: "",
     email: "",
-    password: "",
-    subscription: "JOIN US",
+    password: ""
   });
   const fields = ["Name", "Email", "Password"];
   return (
@@ -41,8 +40,16 @@ export default function Register() {
         onSubmit={async (e) => {
           e.preventDefault();
           await axios
-            .post("https://gym-server-yi13.onrender.com/api/register", details)
-            .then((res) => alert(res.data))
+            .post(
+              "https://gym-server-yi13.onrender.com/api/register",
+              details,
+              {
+                headers: {
+                  "Content-Type": "application/json",
+                },
+              }
+            )
+            .then((res) => console.log(res))
             .then(() => localStorage.setItem("users", JSON.stringify(details)))
             .then(() => {
               nav("/");

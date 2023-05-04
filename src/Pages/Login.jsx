@@ -6,15 +6,17 @@ import axios from "axios";
 import { Typography } from "@mui/material";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import { Sub } from "../App";
+
 export default function Login() {
   const nav = useNavigate();
- 
+  const value = React.useContext(Sub);
   const [details, setDetails] = React.useState({
     email: "",
     password: "",
-    subscription:"SUBSCRIBED"
   });
   const fields = ["Email", "Password"];
+
   return (
     <Box
       sx={{
@@ -40,6 +42,7 @@ export default function Login() {
           borderRadius: "10% 0%",
         }}
         onSubmit={async (e) => {
+          await value.setter[1]("SUBSCRIBED");
           e.preventDefault();
           await axios
             .post("https://gym-server-yi13.onrender.com/api/login", details)
@@ -87,7 +90,7 @@ export default function Login() {
           Login
         </Button>
         <Typography>
-          Not Have an Account? 
+          Not Have an Account?
           <Link
             style={{ textDecoration: "none", color: "black" }}
             to="/register"
