@@ -84,7 +84,7 @@ export default function Register() {
           }}
           type="submit"
         >
-          Send
+          SignUp
         </Button>
         <Typography>
           Already have an Account?
