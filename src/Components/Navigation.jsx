@@ -101,7 +101,7 @@ function Navigation() {
               textDecoration: "none",
             }}
             onClick={() => {
-              navigate("/");
+              navigate("/home");
             }}
           >
             GYM
