@@ -3,8 +3,12 @@ import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 import { Typography } from "@mui/material";
 export default function Register() {
+
+
+  const nav=useNavigate();
   const [details, setDetails] = React.useState({
     name: "",
     email: "",
@@ -40,8 +44,12 @@ export default function Register() {
           await axios
             .post("https://gym-server-yi13.onrender.com/api/register", details)
             .then((res) => alert(res.data))
-            .then(() => localStorage.setItem("users", details))
+            .then(() => localStorage.setItem("users", JSON.stringify(details)))
+            .then(()=>{
+              nav("/login")
+            })
             .catch((err) => alert(err.response.data));
+
         }}
       >
         {fields.map((ele, ind) => {

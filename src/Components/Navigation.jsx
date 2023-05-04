@@ -18,7 +18,7 @@ function Navigation() {
   const user = JSON.parse(localStorage.getItem("users"));
   useEffect(() => {
     if (user && user.email) {
-      navigate("/home");
+      navigate("/");
     } else {
       navigate("/register");
     }

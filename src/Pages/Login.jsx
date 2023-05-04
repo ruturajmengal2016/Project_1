@@ -5,7 +5,17 @@ import Button from "@mui/material/Button";
 import axios from "axios";
 import { Typography } from "@mui/material";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 export default function Login() {
+  const nav = useNavigate();
+  const user = JSON.parse(localStorage.getItem("users"));
+  React.useEffect(() => {
+    if (user && user.email) {
+      nav("/");
+    } else {
+      nav("/register");
+    }
+  });
   const [details, setDetails] = React.useState({
     email: "",
     password: "",
@@ -40,6 +50,9 @@ export default function Login() {
           await axios
             .post("https://gym-server-yi13.onrender.com/api/login", details)
             .then((res) => alert(res.data))
+            .then(() => {
+              nav("/");
+            })
             .catch((err) => alert(err.response.data));
         }}
       >
