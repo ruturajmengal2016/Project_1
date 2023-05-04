@@ -38,7 +38,7 @@ export default function Trainners() {
       <List
         sx={{
           width: "100%",
-          height: "100vh",
+          minHeight: "100vh",
           maxHeight: "fit-content",
           bgcolor: "background.paper",
           display: "flex",

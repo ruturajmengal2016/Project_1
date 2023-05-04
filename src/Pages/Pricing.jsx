@@ -6,7 +6,7 @@ const Pricing = () => {
   return (
     <Box
       sx={{
-        height: "100vh",
+        minHeight: "100vh",
         maxHeight: "fit-content",
         display: "flex",
         flexDirection: {

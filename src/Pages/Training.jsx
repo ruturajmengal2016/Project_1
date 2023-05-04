@@ -33,8 +33,11 @@ export default function Training() {
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
-          gap: "1rem",
+          // gap: "1rem",
+          marginLeft: "1rem",
+          marginRight: "1rem",
           scrollBehavior: "smooth",
+          boxSizing: "border-box",
           flexDirection: {
             xs: "column",
             sm: "row",
@@ -49,9 +52,8 @@ export default function Training() {
       </Box>
       <Box
         sx={{
-          position: "absolute",
-          top: "98%",
-          left: "50%",
+          position: "relative",
+          bottom: "10rem",
           display: { xs: "none", sm: "flex" },
           alignItems: "flex-start",
           justifyContent: "center",
