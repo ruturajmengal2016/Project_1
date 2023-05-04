@@ -3,12 +3,10 @@ import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { Typography } from "@mui/material";
 export default function Register() {
-
-
-  const nav=useNavigate();
+  const nav = useNavigate();
   const [details, setDetails] = React.useState({
     name: "",
     email: "",
@@ -45,11 +43,10 @@ export default function Register() {
             .post("https://gym-server-yi13.onrender.com/api/register", details)
             .then((res) => alert(res.data))
             .then(() => localStorage.setItem("users", JSON.stringify(details)))
-            .then(()=>{
-              nav("/login")
+            .then(() => {
+              nav("/login");
             })
             .catch((err) => alert(err.response.data));
-
         }}
       >
         {fields.map((ele, ind) => {
@@ -70,6 +67,12 @@ export default function Register() {
         <Button variant="contained" type="submit">
           Send
         </Button>
+        <Typography>
+          Already have an Account?{" "}
+          <Link style={{ textDecoration: "none" }} to="/login">
+            Log In
+          </Link>
+        </Typography>
       </form>
     </Box>
   );

@@ -6,6 +6,8 @@ import {
   BsFillArrowRightCircleFill,
 } from "react-icons/bs";
 export default function Training() {
+ 
+
   const refe = React.useRef();
   const array = [
     "https://images.pexels.com/photos/7690215/pexels-photo-7690215.jpeg",

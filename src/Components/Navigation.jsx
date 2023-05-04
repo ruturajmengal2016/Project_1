@@ -139,7 +139,6 @@ function Navigation() {
                   bgcolor: "red",
                   "&:hover": {
                     bgcolor: "red",
-
                   },
                 }}
               >

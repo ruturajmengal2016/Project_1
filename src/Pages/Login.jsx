@@ -13,9 +13,10 @@ export default function Login() {
     if (user && user.email) {
       nav("/");
     } else {
-      nav("/register");
+      nav("/login");
     }
-  });
+  }, []);
+
   const [details, setDetails] = React.useState({
     email: "",
     password: "",
@@ -72,10 +73,13 @@ export default function Login() {
           );
         })}
         <Button variant="contained" type="submit">
-          Send
+          Login
         </Button>
         <Typography>
-          Not Have an Account? <Link to="/register">Register</Link>
+          Not Have an Account?
+          <Link style={{ textDecoration: "none" }} to="/register">
+            Register
+          </Link>
         </Typography>
       </form>
     </Box>
