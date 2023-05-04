@@ -11,6 +11,7 @@ export default function Register() {
     name: "",
     email: "",
     password: "",
+    subscription: "JOIN US",
   });
   const fields = ["Name", "Email", "Password"];
   return (
@@ -86,7 +87,7 @@ export default function Register() {
           Send
         </Button>
         <Typography>
-          Already have an Account?{" "}
+          Already have an Account?
           <Link style={{ textDecoration: "none", color: "black" }} to="/">
             Log In
           </Link>

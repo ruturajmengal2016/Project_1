@@ -12,6 +12,7 @@ export default function Login() {
   const [details, setDetails] = React.useState({
     email: "",
     password: "",
+    subscription:"SUBSCRIBED"
   });
   const fields = ["Email", "Password"];
   return (
