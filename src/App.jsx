@@ -34,6 +34,7 @@ function App() {
         }
       >
         <Route
+          index
           path="/home"
           element={
             <>
@@ -78,7 +79,7 @@ function App() {
             </>
           }
         />
-        <Route index path="/" element={<Login />} />
+        <Route path="/" element={<Login />} />
         <Route path="/register" element={<Register />} />
       </Route>
     )
