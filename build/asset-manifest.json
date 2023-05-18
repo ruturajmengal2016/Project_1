@@ -1,15 +1,20 @@
 {
   "files": {
-    "main.css": "/static/css/main.a4f3c317.css",
-    "main.js": "/static/js/main.5431733d.js",
+    "main.css": "/static/css/main.b6c7509a.css",
+    "main.js": "/static/js/main.84a7a691.js",
     "static/js/787.142da1d4.chunk.js": "/static/js/787.142da1d4.chunk.js",
+    "static/media/grocery.jpg": "/static/media/grocery.5642029fc1bbe8cc6a1e.jpg",
+    "static/media/homeAccessories.jpg": "/static/media/homeAccessories.5c2cdb9a952450455f20.jpg",
+    "static/media/electronics.jpg": "/static/media/electronics.66e73cc7d5a3505fd290.jpg",
+    "static/media/Products.jpg": "/static/media/Products.922f7f23fb0b06ce42a2.jpg",
+    "static/media/cloths.jpg": "/static/media/cloths.f219fa22c966b727f31b.jpg",
     "index.html": "/index.html",
-    "main.a4f3c317.css.map": "/static/css/main.a4f3c317.css.map",
-    "main.5431733d.js.map": "/static/js/main.5431733d.js.map",
+    "main.b6c7509a.css.map": "/static/css/main.b6c7509a.css.map",
+    "main.84a7a691.js.map": "/static/js/main.84a7a691.js.map",
     "787.142da1d4.chunk.js.map": "/static/js/787.142da1d4.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.a4f3c317.css",
-    "static/js/main.5431733d.js"
+    "static/css/main.b6c7509a.css",
+    "static/js/main.84a7a691.js"
   ]
 }
