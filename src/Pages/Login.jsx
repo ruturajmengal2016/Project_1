@@ -1,6 +1,5 @@
 import { Box, Button, TextField } from "@mui/material";
 import React from "react";
-import Products from "../utils/Products.jpg";
 const Login = () => {
   const lables = ["Name", "Email", "Password", "Date"];
   return (
@@ -13,11 +12,10 @@ const Login = () => {
         alignItems: "center",
         height: "100vh",
         maxHeight: "fit-content",
-        backgroundImage: `url(${Products})`,
+        backgroundImage: `url(https://productoftheyearusa.com/wp-content/uploads/2020/01/winners.jpg)`,
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
         backgroundPosition: "center",
-        
       }}
     >
       <Box
@@ -31,9 +29,9 @@ const Login = () => {
           boxSizing: "border-box",
           p: "5rem",
           borderRadius: "4rem 0rem 4rem 0rem",
-          border: "2px solid #F3E99F",
-          backgroundColor: "#ffb74d",
-          opacity: `1 !important`,
+          border: "2px solid blue",
+          backgroundColor: "#fafafa",
+          opacity: `0.9 !important`,
           color: "black",
           outline: "none",
         }}

@@ -100,14 +100,14 @@ export default function Navigation() {
     >
       <MenuItem
         onClick={() => {
-          navigate("/login");
+          navigate("/profile");
         }}
       >
         Profile
       </MenuItem>
       <MenuItem
         onClick={() => {
-          navigate("/register");
+          navigate("/login");
         }}
       >
         My account
