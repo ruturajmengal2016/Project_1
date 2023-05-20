@@ -84,5 +84,5 @@ What did you learn while building this project? What challenges did you face and
 
 ## Screenshots
 
-![App Screenshot]("https://th.bing.com/th/id/OIP.Ihxf6McK30QSQ142F2HeIgHaEK?pid=ImgDet&rs=1")
+![App Screenshot]("https://www.bing.com/images/search?view=detailV2&ccid=Ihxf6McK&id=0EBB620AE95077CD1039D8D0DF835971AFFC3559&thid=OIP.Ihxf6McK30QSQ142F2HeIgHaEK&mediaurl=https%3A%2F%2Fwww.napkyn.com%2Fwp-content%2Fuploads%2F2017%2F08%2Fhyperlink.png&exph=558&expw=991&q=Computer+Link&simid=608041492707627828&form=IRPRST&ck=43283BA891C448B21740BF8887FB7D09&selectedindex=6&ajaxhist=0&ajaxserp=0&vt=0&sim=11")
 
