@@ -1,7 +1,14 @@
 .root {
+  display: flex;
   justify-content: center;
-  align-items: flex-start;
-  flex-direction: column;
-  gap: 1rem;
-  background-image: linear-gradient();
+  align-items: center;
+  height: 100vh;
+  max-height: fit-content;
+  .heading {
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 1rem;
+    background-image: linear-gradient();
+  }
 }

@@ -12,11 +12,13 @@ import FavoriteIcon from "@mui/icons-material/Favorite";
 import ShareIcon from "@mui/icons-material/Share";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import StoreMenu from "./StoreMenu";
+import { useNavigate } from "react-router-dom";
 
-export default function SoreCard() {
+export default function SoreCard({ closeShop, title }) {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const date = new Date().toDateString();
   const open = Boolean(anchorEl);
+  const navigate = useNavigate();
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
   };
@@ -25,6 +27,13 @@ export default function SoreCard() {
   };
   return (
     <Card
+      onClick={() => {
+        if (!closeShop) {
+          navigate(`/ourstore/${title}`);
+        } else {
+          alert("Sorry! This shop is closed");
+        }
+      }}
       sx={{
         minWidth: 400,
         maxWidth: 400,
@@ -32,6 +41,9 @@ export default function SoreCard() {
         overflow: "scroll",
         display: "flex",
         flexDirection: "column",
+        position: "relative",
+        backgroundColor: closeShop ? `rgba(0,0,0,0.5)` : "",
+        cursor: closeShop ? "not-allowed" : "pointer",
       }}
     >
       <CardHeader
@@ -70,6 +82,18 @@ export default function SoreCard() {
           width: "fit-content",
         }}
       />
+      <CardContent
+        component="h1"
+        sx={{
+          position: "absolute",
+          display: closeShop ? "" : "none",
+          color: "white",
+          fontFamily: "cursive",
+          translate: "10rem 10rem",
+        }}
+      >
+        Close
+      </CardContent>
       <CardContent>
         <Typography variant="body2" color="text.secondary">
           This impressive paella is a perfect party dish and a fun meal to cook

@@ -7,6 +7,7 @@ const Login = () => {
     <Box
       component="div"
       sx={{
+        position: "relative",
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
@@ -16,13 +17,14 @@ const Login = () => {
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
         backgroundPosition: "center",
-        zIndex: -1,
+        
       }}
     >
       <Box
         component="form"
         onSubmit={() => {}}
         sx={{
+          position: "relative",
           display: "flex",
           flexDirection: "column",
           gap: "1rem",
@@ -30,9 +32,8 @@ const Login = () => {
           p: "5rem",
           borderRadius: "4rem 0rem 4rem 0rem",
           border: "2px solid #F3E99F",
-          zIndex: 1,
-          backgroundColor: "#F3E99F",
-          opacity: 0.9,
+          backgroundColor: "#ffb74d",
+          opacity: `1 !important`,
           color: "black",
           outline: "none",
         }}

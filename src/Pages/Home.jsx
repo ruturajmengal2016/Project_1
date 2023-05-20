@@ -25,17 +25,9 @@ function Home() {
   });
   const text = [grocery, electronics, cloths, homeAccessories];
   return (
-    <Box
-      sx={{
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        height: "100vh",
-        maxHeight: "fit-content",
-      }}
-    >
+    <Box component="div" className={Style.root}>
       <Box
-        className={Style.root}
+        className={Style.heading}
         sx={{ display: { xs: "none", sm: "flex" }, width: "50%" }}
       >
         {springs.map((props, ind) => {

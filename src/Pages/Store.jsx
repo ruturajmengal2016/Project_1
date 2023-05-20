@@ -94,7 +94,7 @@ const Store = () => {
         }}
       >
         {allData.map((data, ind) => {
-          return <SoreCard key={ind} />;
+          return <SoreCard key={ind} closeShop={false} title="Sai Kirana" />;
         })}
       </Box>
     </Box>

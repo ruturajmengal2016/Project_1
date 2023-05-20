@@ -13,6 +13,7 @@ import Home from "./Pages/Home";
 import Login from "./Pages/Login";
 import Register from "./Pages/Register";
 import Store from "./Pages/Store";
+import OurStore from "./Pages/OurStore";
 function App() {
   const router = createBrowserRouter(
     createRoutesFromElements(
@@ -26,6 +27,7 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/favourite" element={<h1>Favourite</h1>} />
         <Route path="/notification" element={<h1>Notification</h1>} />
+        <Route path="/ourstore/:title" element={<OurStore />} />
       </Route>
     )
   );
