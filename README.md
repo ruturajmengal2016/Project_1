@@ -84,5 +84,5 @@ What did you learn while building this project? What challenges did you face and
 
 ## Screenshots
 
-![App Screenshot]("https://cdn.shopify.com/s/files/1/0274/3012/5667/t/2/assets/669370e67bdf--ComplementaryTools.png")
+![App Screenshot](https://cdn.shopify.com/s/files/1/0274/3012/5667/t/2/assets/669370e67bdf--ComplementaryTools.png)
 
