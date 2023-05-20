@@ -84,5 +84,5 @@ What did you learn while building this project? What challenges did you face and
 
 ## Screenshots
 
-![App Screenshot]("https://drive.google.com/file/d/1AiZUOp-X7MgTu_VGpzYwEPMdU6ADhNAM/view?usp=share_link")
+![App Screenshot]("https://th.bing.com/th/id/OIP.Ihxf6McK30QSQ142F2HeIgHaEK?pid=ImgDet&rs=1")
 
