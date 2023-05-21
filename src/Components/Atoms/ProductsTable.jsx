@@ -21,7 +21,8 @@ import Switch from "@mui/material/Switch";
 import ShoppingBagIcon from "@mui/icons-material/ShoppingBag";
 import FilterListIcon from "@mui/icons-material/FilterList";
 import { visuallyHidden } from "@mui/utils";
-
+import { updateCartData } from "../../Redux/slice";
+import { useDispatch } from "react-redux";
 function descendingComparator(a, b, orderBy) {
   if (b[orderBy] < a[orderBy]) {
     return -1;
@@ -146,8 +147,8 @@ EnhancedTableHead.propTypes = {
 };
 
 function EnhancedTableToolbar(props) {
-  const { numSelected } = props;
-
+  const { numSelected, selected, rows } = props;
+  const dispatch = useDispatch();
   return (
     <Toolbar
       sx={{
@@ -184,7 +185,17 @@ function EnhancedTableToolbar(props) {
 
       {numSelected > 0 ? (
         <Tooltip title="Action">
-          <IconButton>
+          <IconButton
+            onClick={() => {
+              selected.forEach((ele) => {
+                rows.forEach((row) => {
+                  if (row.name === ele) {
+                    dispatch(updateCartData({ data: row }));
+                  }
+                });
+              });
+            }}
+          >
             <ShoppingBagIcon />
           </IconButton>
         </Tooltip>
@@ -277,7 +288,11 @@ export default function EnhancedTable({ rows }) {
   return (
     <Box sx={{ width: "100%" }}>
       <Paper sx={{ width: "100%", mb: 2 }}>
-        <EnhancedTableToolbar numSelected={selected.length} />
+        <EnhancedTableToolbar
+          numSelected={selected.length}
+          selected={selected}
+          rows={rows}
+        />
         <TableContainer>
           <Table
             sx={{ minWidth: 750 }}

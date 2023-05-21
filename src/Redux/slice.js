@@ -8,12 +8,7 @@ export const update = createSlice({
   },
   reducers: {
     updateCart: (state, action) => {
-      if (action.type === "increase") {
-        state.cart += 1;
-      }
-      if (action.type === "decrease") {
-        state.cart -= 1;
-      }
+      state.cart = action.payload.data;
     },
     updateNotification: (state) => {
       state.notification += 1;
@@ -24,14 +19,18 @@ export const update = createSlice({
 export const serverData = createSlice({
   name: "stores",
   initialState: {
-    store: [1,2,3,4,5,6,7],
+    store: [1, 2, 3, 4, 5, 6, 7],
+    cartData: [],
   },
   reducers: {
     updateStore: (state, action) => {
       state.store = action.payload.data;
     },
+    updateCartData: (state, action) => {
+      state.cartData.push(action.payload.data);
+    },
   },
 });
 
 export const { updateCart, updateNotification } = update.actions;
-export const { updateStore } = serverData.actions;
+export const { updateStore, updateCartData } = serverData.actions;

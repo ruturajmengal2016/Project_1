@@ -14,12 +14,13 @@ import Login from "./Pages/Login";
 import Store from "./Pages/Store";
 import OurStore from "./Pages/OurStore";
 import Profile from "./Pages/Profile";
+import Cart from "./Pages/Cart";
 function App() {
   const router = createBrowserRouter(
     createRoutesFromElements(
       <Route path="/" element={<Root />}>
         <Route index path="/" element={<Home />} />
-        <Route path="/cart" element={<h1>Cart</h1>} />
+        <Route path="/cart" element={<Cart />} />
         <Route path="/store/:name" element={<Store />} />
         <Route path="/faq" element={<h1>FAQ</h1>} />
         <Route path="/report" element={<h1>Report</h1>} />

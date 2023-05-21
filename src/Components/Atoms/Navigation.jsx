@@ -19,6 +19,7 @@ import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemText from "@mui/material/ListItemText";
+import { Tooltip } from "@mui/material";
 
 export default function Navigation() {
   const cartCount = useSelector((state) => state.update.cart);
@@ -200,30 +201,35 @@ export default function Navigation() {
 
           <Box sx={{ flexGrow: 1 }} />
           <Box sx={{ display: { xs: "none", md: "flex" } }}>
-            <IconButton
-              size="large"
-              aria-label="show 4 new mails"
-              color="inherit"
-              onClick={() => {
-                navigate("/cart");
-              }}
-            >
-              <Badge badgeContent={cartCount} color="error">
-                <LocalMallIcon />
-              </Badge>
-            </IconButton>
-            <IconButton
-              size="large"
-              aria-label="show 17 new notifications"
-              color="inherit"
-              onClick={() => {
-                navigate("/notification");
-              }}
-            >
-              <Badge badgeContent={notifyCount} color="error">
-                <NotificationsIcon />
-              </Badge>
-            </IconButton>
+            <Tooltip title="cart">
+              <IconButton
+                size="large"
+                aria-label="show 4 new mails"
+                color="inherit"
+                onClick={() => {
+                  navigate("/cart");
+                }}
+              >
+                <Badge badgeContent={cartCount} color="error">
+                  <LocalMallIcon />
+                </Badge>
+              </IconButton>
+            </Tooltip>
+            <Tooltip title="notification">
+              <IconButton
+                size="large"
+                aria-label="show 17 new notifications"
+                color="inherit"
+                onClick={() => {
+                  navigate("/notification");
+                }}
+              >
+                <Badge badgeContent={notifyCount} color="error">
+                  <NotificationsIcon />
+                </Badge>
+              </IconButton>
+            </Tooltip>
+
             <IconButton
               size="large"
               edge="end"
