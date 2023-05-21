@@ -1,7 +1,7 @@
 import React from "react";
-import fetchData from "../axios/axios";
+// import fetchData from "../axios/axios"; 
 import { useLocation } from "react-router-dom";
-import { updateStore } from "../Redux/slice";
+// import { updateStore } from "../Redux/slice"; 
 import { useDispatch, useSelector } from "react-redux";
 import Box from "@mui/material/Box";
 import { Typography } from "@mui/material";
@@ -58,12 +58,13 @@ const Store = () => {
   const dispatch = useDispatch();
   const location = useLocation();
   const allData = useSelector((state) => state.stores.store);
-  React.useEffect(() => {
-    fetchData
-      .get(`/api/${location.state.storeName}`)
-      .then((res) => dispatch(updateStore({ store: res })))
-      .catch((error) => console.error(error));
-  }, [location, dispatch]);
+  console.log(allData);
+  // React.useEffect(() => {
+  //   fetchData
+  //     .get(`/api/${location.state.storeName}`)
+  //     .then((res) => dispatch(updateStore({ store: res })))
+  //     .catch((error) => console.error(error));
+  // }, [location, dispatch]);
 
   return (
     <Box component="div" className={Style.root}>
