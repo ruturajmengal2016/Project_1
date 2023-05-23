@@ -3,10 +3,14 @@ import Box from "@mui/material/Box";
 import { Button, Typography } from "@mui/material";
 import { useDispatch } from "react-redux";
 import { deleteCartData } from "../../Redux/slice";
-const CartBox = ({ product, index }) => {
+
+const CartBox = ({ product, index, handleClick }) => {
   const dispatch = useDispatch();
   return (
-    <Box component="div" sx={{ padding: "1rem" }}>
+    <Box
+      component="div"
+      sx={{ padding: "1rem", "&:hover": { backgroundColor: "lightblue" } }}
+    >
       <Box
         component="div"
         sx={{
@@ -44,9 +48,17 @@ const CartBox = ({ product, index }) => {
           {product.calories}
         </Typography>
         <Button
+          sx={{
+            textTransform: "none",
+            backgroundColor: "red",
+            "&:hover": {
+              backgroundColor: "red",
+            },
+          }}
           variant="contained"
           onClick={() => {
             dispatch(deleteCartData({ data: index }));
+            handleClick(product.name);
           }}
         >
           Delete

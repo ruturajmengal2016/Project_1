@@ -5,10 +5,24 @@ import { useDispatch, useSelector } from "react-redux";
 import { updateCart } from "../Redux/slice";
 import CartBox from "../Components/Atoms/CartBox";
 import { updateCartData } from "../Redux/slice";
-
+import KeyboardBackspaceIcon from "@mui/icons-material/KeyboardBackspace";
+import EastIcon from "@mui/icons-material/East";
+import { Link } from "react-router-dom";
+import Snackbar from "@mui/material/Snackbar";
+import Alert from "@mui/material/Alert";
 export default function Cart() {
   const cartData = useSelector((state) => state.stores.cartData);
   const dispatch = useDispatch();
+  const [open, setOpen] = React.useState(false);
+  const handleClick = (data) => {
+    setOpen(data);
+  };
+  const handleClose = (event, reason) => {
+    if (reason === "clickaway") {
+      return;
+    }
+    setOpen(false);
+  };
   React.useEffect(() => {
     dispatch(updateCart({ data: cartData.length }));
   }, [dispatch, cartData]);
@@ -22,6 +36,11 @@ export default function Cart() {
         padding: "2rem",
       }}
     >
+      <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
+        <Alert onClose={handleClose} severity="success" sx={{ width: "100%" }}>
+          {open} has removed from your cart list
+        </Alert>
+      </Snackbar>
       <Typography
         variant="div"
         sx={{
@@ -43,7 +62,6 @@ export default function Cart() {
           display: "flex",
           flexDirection: "column",
           height: "90%",
-          backgroundColor: "lightslategrey",
           marginTop: "1rem",
         }}
       >
@@ -51,13 +69,12 @@ export default function Cart() {
           sx={{
             width: "100%",
             height: "10%",
-            backgroundColor: "lightgreen",
             display: "flex",
             justifyContent: "space-between",
             alignItems: "center",
             padding: "1rem",
             boxSizing: "border-box",
-            position: "",
+            border: "1px solid black",
           }}
         >
           <Typography variant="body1" sx={{ fontWeight: "bold" }}>
@@ -84,9 +101,49 @@ export default function Cart() {
         </Box>
         <Box sx={{ overflowY: "auto" }}>
           {cartData.map((ele, ind) => {
-            return <CartBox product={ele} key={ind} index={ind} />;
+            return (
+              <>
+                <CartBox
+                  product={ele}
+                  key={ind}
+                  index={ind}
+                  handleClick={handleClick}
+                />
+                <Divider />
+              </>
+            );
           })}
         </Box>
+      </Box>
+      <Box sx={{ display: "flex", justifyContent: "space-between" }}>
+        <Link
+          to="/"
+          style={{
+            color: "blue",
+            textDecoration: "none",
+            fontSize: "1.1rem",
+            marginTop: "0.5rem",
+            display: "flex",
+            alignItems: "center",
+            gap: "0.2rem",
+          }}
+        >
+          <KeyboardBackspaceIcon /> Continue shopping
+        </Link>
+        <Link
+          to="/bill"
+          style={{
+            color: "green",
+            textDecoration: "none",
+            fontSize: "1.1rem",
+            marginTop: "0.5rem",
+            display: "flex",
+            alignItems: "center",
+            gap: "0.2rem",
+          }}
+        >
+          Generate bill <EastIcon />
+        </Link>
       </Box>
     </Box>
   );

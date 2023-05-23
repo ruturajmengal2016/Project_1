@@ -15,6 +15,7 @@ import Store from "./Pages/Store";
 import OurStore from "./Pages/OurStore";
 import Profile from "./Pages/Profile";
 import Cart from "./Pages/Cart";
+import Bill from "./Components/Atoms/Bill";
 function App() {
   const router = createBrowserRouter(
     createRoutesFromElements(
@@ -29,6 +30,7 @@ function App() {
         <Route path="/favourite" element={<h1>Favourite</h1>} />
         <Route path="/notification" element={<h1>Notification</h1>} />
         <Route path="/ourstore/:title" element={<OurStore />} />
+        <Route path="/bill" element={<Bill />} />
       </Route>
     )
   );
