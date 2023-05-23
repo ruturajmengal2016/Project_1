@@ -1,18 +1,17 @@
 import * as React from "react";
 import Box from "@mui/material/Box";
-import { Button, Divider, Typography } from "@mui/material";
-import { useDispatch, useSelector } from "react-redux";
-import { updateCart } from "../Redux/slice";
+import { Divider, Typography } from "@mui/material";
+import { useSelector } from "react-redux";
 import CartBox from "../Components/Atoms/CartBox";
-import { updateCartData } from "../Redux/slice";
 import KeyboardBackspaceIcon from "@mui/icons-material/KeyboardBackspace";
 import EastIcon from "@mui/icons-material/East";
 import { Link } from "react-router-dom";
 import Snackbar from "@mui/material/Snackbar";
 import Alert from "@mui/material/Alert";
+import ImageList from "@mui/material/ImageList";
+import ImageListItem from "@mui/material/ImageListItem";
 export default function Cart() {
   const cartData = useSelector((state) => state.stores.cartData);
-  const dispatch = useDispatch();
   const [open, setOpen] = React.useState(false);
   const handleClick = (data) => {
     setOpen(data);
@@ -23,9 +22,6 @@ export default function Cart() {
     }
     setOpen(false);
   };
-  React.useEffect(() => {
-    dispatch(updateCart({ data: cartData.length }));
-  }, [dispatch, cartData]);
   return (
     <Box
       sx={{
@@ -99,21 +95,40 @@ export default function Cart() {
             Actions
           </Typography>
         </Box>
-        <Box sx={{ overflowY: "auto" }}>
-          {cartData.map((ele, ind) => {
-            return (
-              <>
-                <CartBox
-                  product={ele}
-                  key={ind}
-                  index={ind}
-                  handleClick={handleClick}
-                />
-                <Divider />
-              </>
-            );
-          })}
-        </Box>
+        {cartData.length ? (
+          <Box sx={{ overflowY: "auto" }}>
+            {cartData.map((ele, ind) => {
+              return (
+                <>
+                  <CartBox
+                    product={ele}
+                    key={ind}
+                    index={ind}
+                    handleClick={handleClick}
+                  />
+                  <Divider />
+                </>
+              );
+            })}
+          </Box>
+        ) : (
+          <ImageList
+            sx={{
+              height: "100%",
+              width: "100%",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            <ImageListItem>
+              <img
+                src="https://media.istockphoto.com/id/1336729805/vector/box-packaging-icon-vector-template-flat-design.jpg?s=170667a&w=0&k=20&c=s9-ac-6CdFLTVFDIKVvg1gbQn-SfGU-KNVGelymcAqo="
+                alt="cart"
+              />
+            </ImageListItem>
+          </ImageList>
+        )}
       </Box>
       <Box sx={{ display: "flex", justifyContent: "space-between" }}>
         <Link
@@ -130,20 +145,24 @@ export default function Cart() {
         >
           <KeyboardBackspaceIcon /> Continue shopping
         </Link>
-        <Link
-          to="/bill"
-          style={{
-            color: "green",
-            textDecoration: "none",
-            fontSize: "1.1rem",
-            marginTop: "0.5rem",
-            display: "flex",
-            alignItems: "center",
-            gap: "0.2rem",
-          }}
-        >
-          Generate bill <EastIcon />
-        </Link>
+        {cartData.length ? (
+          <Link
+            to="/bill"
+            style={{
+              color: "green",
+              textDecoration: "none",
+              fontSize: "1.1rem",
+              marginTop: "0.5rem",
+              display: "flex",
+              alignItems: "center",
+              gap: "0.2rem",
+            }}
+          >
+            Generate bill <EastIcon />
+          </Link>
+        ) : (
+          ""
+        )}
       </Box>
     </Box>
   );
