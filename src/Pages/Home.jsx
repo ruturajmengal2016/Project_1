@@ -71,7 +71,7 @@ function Home() {
           flexWrap: "wrap",
           gap: "1rem",
           width: { xs: "100%", sm: "50%" },
-          backgroundColor: { xs: "lightcoral", sm: "lightskyblue" },
+          background: `linear-gradient(234deg, rgba(34,43,195,0.7540266106442577) 19%, rgba(224,18,53,0.8184523809523809) 100%)`,
         }}
       >
         {data.map((ele, ind) => {
