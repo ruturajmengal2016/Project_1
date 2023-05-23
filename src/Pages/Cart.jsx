@@ -1,8 +1,10 @@
 import * as React from "react";
 import Box from "@mui/material/Box";
-import { Divider, Typography } from "@mui/material";
+import { Button, Divider, Typography } from "@mui/material";
 import { useDispatch, useSelector } from "react-redux";
 import { updateCart } from "../Redux/slice";
+import CartBox from "../Components/Atoms/CartBox";
+import { updateCartData } from "../Redux/slice";
 
 export default function Cart() {
   const cartData = useSelector((state) => state.stores.cartData);
@@ -21,17 +23,18 @@ export default function Cart() {
       }}
     >
       <Typography
-        variant="h4"
+        variant="div"
         sx={{
           fontFamily: "cursive",
           color: "lightsalmon",
           display: "flex",
           justifyContent: "space-between",
           height: "10%",
+          alignItems: "center",
         }}
       >
-        <span>Shopping Cart</span>
-        <span style={{ fontFamily: "monospace" }}>Items:{cartData.length}</span>
+        <Typography variant="h5">Shopping Cart</Typography>
+        <Typography variant="h5">Items:{cartData.length}</Typography>
       </Typography>
       <Divider />
       <Box
@@ -44,7 +47,24 @@ export default function Cart() {
           marginTop: "1rem",
           overflowY: "auto",
         }}
-      ></Box>
+      >
+        {cartData.map((ele, ind) => {
+          return (
+            <Typography
+              variant="body1"
+              component="div"
+              sx={{
+                display: "flex",
+                justifyContent: "space-around",
+                alignItems: "center",
+                width: "100%",
+              }}
+            >
+              <CartBox product={ele} key={ind} index={ind} />
+            </Typography>
+          );
+        })}
+      </Box>
     </Box>
   );
 }

@@ -29,8 +29,12 @@ export const serverData = createSlice({
     updateCartData: (state, action) => {
       state.cartData.push(action.payload.data);
     },
+    deleteCartData: (state, action) => {
+      state.cartData.splice(action.payload.data, 1);
+    },
   },
 });
 
 export const { updateCart, updateNotification } = update.actions;
-export const { updateStore, updateCartData } = serverData.actions;
+export const { updateStore, updateCartData, deleteCartData } =
+  serverData.actions;

@@ -8,11 +8,13 @@ export default function StoreMenu({ anchorEl, open, handleClose }) {
   return (
     <React.Fragment>
       <Menu
+        onClick={(e) => {
+          e.stopPropagation();
+          handleClose();
+        }}
         anchorEl={anchorEl}
         id="account-menu"
         open={open}
-        onClose={handleClose}
-        onClick={handleClose}
         PaperProps={{
           elevation: 0,
           sx: {
@@ -44,10 +46,10 @@ export default function StoreMenu({ anchorEl, open, handleClose }) {
         transformOrigin={{ horizontal: "left", vertical: "top" }}
         anchorOrigin={{ horizontal: "left", vertical: "bottom" }}
       >
-        <MenuItem onClick={handleClose}>
+        <MenuItem>
           <Avatar /> Profile
         </MenuItem>
-        <MenuItem onClick={handleClose}>
+        <MenuItem>
           <Avatar /> Location
         </MenuItem>
         <Divider />

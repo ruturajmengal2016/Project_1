@@ -23,6 +23,7 @@ import FilterListIcon from "@mui/icons-material/FilterList";
 import { visuallyHidden } from "@mui/utils";
 import { updateCartData } from "../../Redux/slice";
 import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 function descendingComparator(a, b, orderBy) {
   if (b[orderBy] < a[orderBy]) {
     return -1;
@@ -149,6 +150,7 @@ EnhancedTableHead.propTypes = {
 function EnhancedTableToolbar(props) {
   const { numSelected, selected, rows } = props;
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   return (
     <Toolbar
       sx={{
@@ -194,6 +196,7 @@ function EnhancedTableToolbar(props) {
                   }
                 });
               });
+              navigate("/cart");
             }}
           >
             <ShoppingBagIcon />

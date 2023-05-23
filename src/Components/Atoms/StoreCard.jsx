@@ -27,7 +27,8 @@ export default function SoreCard({ closeShop, title }) {
   };
   return (
     <Card
-      onClick={() => {
+      onClick={(e) => {
+        e.stopPropagation();
         if (!closeShop) {
           navigate(`/ourstore/${title}`);
         } else {
@@ -35,8 +36,8 @@ export default function SoreCard({ closeShop, title }) {
         }
       }}
       sx={{
-        minWidth: 400,
-        maxWidth: 400,
+        minWidth: 350,
+        maxWidth: 350,
         minHeight: 400,
         overflow: "scroll",
         display: "flex",
@@ -54,8 +55,11 @@ export default function SoreCard({ closeShop, title }) {
         }
         action={
           <IconButton
+            onClick={(e) => {
+              e.stopPropagation();
+              handleClick(e);
+            }}
             aria-label="settings"
-            onClick={handleClick}
             sx={{
               display: {
                 xs: "none",
@@ -69,7 +73,7 @@ export default function SoreCard({ closeShop, title }) {
         title="Shrimp and Chorizo Paella"
         subheader={date}
       />
-      <StoreMenu handleClose={handleClose} anchorEl={anchorEl} open={open} />
+      <StoreMenu anchorEl={anchorEl} open={open} handleClose={handleClose} />
       <CardMedia
         component="img"
         image="https://images.unsplash.com/photo-1551782450-a2132b4ba21d"

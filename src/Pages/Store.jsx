@@ -1,7 +1,6 @@
 import React from "react";
-// import fetchData from "../axios/axios"; 
+import fetchData from "../axios/axios";
 import { useLocation } from "react-router-dom";
-// import { updateStore } from "../Redux/slice"; 
 import { useDispatch, useSelector } from "react-redux";
 import Box from "@mui/material/Box";
 import { Typography } from "@mui/material";
@@ -10,6 +9,7 @@ import { styled } from "@mui/material/styles";
 import InputBase from "@mui/material/InputBase";
 import SearchIcon from "@mui/icons-material/Search";
 import SoreCard from "../Components/Atoms/StoreCard";
+import { updateStore } from "../Redux/slice";
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -58,7 +58,6 @@ const Store = () => {
   const dispatch = useDispatch();
   const location = useLocation();
   const allData = useSelector((state) => state.stores.store);
-  console.log(allData);
   // React.useEffect(() => {
   //   fetchData
   //     .get(`/api/${location.state.storeName}`)
