@@ -45,25 +45,48 @@ export default function Cart() {
           height: "90%",
           backgroundColor: "lightslategrey",
           marginTop: "1rem",
-          overflowY: "auto",
         }}
       >
-        {cartData.map((ele, ind) => {
-          return (
-            <Typography
-              variant="body1"
-              component="div"
-              sx={{
-                display: "flex",
-                justifyContent: "space-around",
-                alignItems: "center",
-                width: "100%",
-              }}
-            >
-              <CartBox product={ele} key={ind} index={ind} />
-            </Typography>
-          );
-        })}
+        <Box
+          sx={{
+            width: "100%",
+            height: "10%",
+            backgroundColor: "lightgreen",
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+            padding: "1rem",
+            boxSizing: "border-box",
+            position: "",
+          }}
+        >
+          <Typography variant="body1" sx={{ fontWeight: "bold" }}>
+            Product Name
+          </Typography>
+          <Typography
+            variant="body1"
+            sx={{
+              fontWeight: "bold",
+              display: {
+                xs: "none",
+                sm: "flex",
+              },
+            }}
+          >
+            Quantity
+          </Typography>
+          <Typography variant="body1" sx={{ fontWeight: "bold" }}>
+            Price
+          </Typography>
+          <Typography variant="body1" sx={{ fontWeight: "bold" }}>
+            Actions
+          </Typography>
+        </Box>
+        <Box sx={{ overflowY: "auto" }}>
+          {cartData.map((ele, ind) => {
+            return <CartBox product={ele} key={ind} index={ind} />;
+          })}
+        </Box>
       </Box>
     </Box>
   );
