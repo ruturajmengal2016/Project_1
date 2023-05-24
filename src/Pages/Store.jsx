@@ -58,12 +58,12 @@ const Store = () => {
   const dispatch = useDispatch();
   const location = useLocation();
   const allData = useSelector((state) => state.stores.store);
-  // React.useEffect(() => {
-  //   fetchData
-  //     .get(`/api/${location.state.storeName}`)
-  //     .then((res) => dispatch(updateStore({ store: res })))
-  //     .catch((error) => console.error(error));
-  // }, [location, dispatch]);
+  React.useEffect(() => {
+    fetchData
+      .get(`/api/${location.state.storeName}`)
+      .then((res) => dispatch(updateStore({ store: res })))
+      .catch((error) => console.error(error));
+  }, [location, dispatch]);
 
   return (
     <Box component="div" className={Style.root}>

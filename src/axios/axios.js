@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const fetchData = axios.create({
-  baseURL: "",
+  baseURL: "https://compras-server-jcte.onrender.com",
 });
 
 export default fetchData;
