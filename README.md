@@ -27,7 +27,7 @@ Javascript, HTML, CSS, React.js, Node.js
 
 
 ## 🔗 Links
-[![portfolio](https://img.shields.io/badge/my_portfolio-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://drive.google.com/file/d/1u0cxhM-hhSi71KNdcIZFGYCE-sAlivIo/view?usp=share_link)
+[![portfolio](https://img.shields.io/badge/my_portfolio-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://katherineoelsner.com/)
 [![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/ruturajmengal2016/)
 
 
@@ -59,6 +59,8 @@ Start the server
 
 
 ## Deployment
+
+The deployment link of this project is https://near-store.netlify.app/
 
 To deploy this project run
 
