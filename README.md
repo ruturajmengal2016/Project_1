@@ -85,5 +85,6 @@ What did you learn while building this project? What challenges did you face and
 
 
 ## Screenshots
+![Screenshot 2023-05-20 163004](https://github.com/ruturajmengal2016/project_1/assets/114099113/2dabeb42-df8b-4b68-8877-0bebf27d7062)
 
-![App Screenshot](https://drive.google.com/file/d/1AiZUOp-X7MgTu_VGpzYwEPMdU6ADhNAM/view?usp=share_link)
+
