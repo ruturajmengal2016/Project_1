@@ -248,7 +248,7 @@ export default function Profile() {
 
 function SwipeableEdgeDrawer(props) {
   const { window } = props;
-  const [open, setOpen] = React.useState(true);
+  const [open, setOpen] = React.useState(false);
 
   const toggleDrawer = (newOpen) => () => {
     setOpen(newOpen);

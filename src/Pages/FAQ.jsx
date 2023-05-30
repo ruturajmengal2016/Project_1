@@ -11,19 +11,23 @@ export default function FAQ() {
           bgcolor: "#cfe8fc",
           minHeight: "100vh",
           boxSizing: "border-box",
-          padding: "2rem",
+          padding: { xs: "0.5rem", sm: "2rem" },
           display: "flex",
+          flexDirection: {
+            xs: "column-reverse",
+            sm: "row",
+          },
           gap: "1rem",
         }}
       >
         <Box
           sx={{
             height: "100%",
-            width: "40%",
+            width: { xs: "100%", sm: "40%" },
             display: "flex",
             flexDirection: "column",
             boxSizing: "border-box",
-            padding: "1rem",
+            padding: { xs: "0.5rem", sm: "1rem" },
             gap: "1rem",
           }}
         >
@@ -33,7 +37,7 @@ export default function FAQ() {
               width: "100%",
               display: "flex",
               boxSizing: "border-box",
-              padding: "1rem",
+              padding: { xs: "0.2rem 0.2rem", sm: "1rem" },
               flexDirection: "column",
             }}
           >
@@ -76,7 +80,7 @@ export default function FAQ() {
           component="div"
           sx={{
             height: "60%",
-            width: "60%",
+            width: { xs: "100%", sm: "60%" },
           }}
         >
           <img
