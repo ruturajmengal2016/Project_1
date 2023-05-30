@@ -239,8 +239,8 @@ export default function Profile() {
           <Button variant="outlined" sx={{ textTransform: "none" }}>
             Your refund
           </Button>
-          <SwipeableEdgeDrawer />
         </Box>
+        <SwipeableEdgeDrawer />
       </Box>
     </Box>
   );
@@ -248,7 +248,7 @@ export default function Profile() {
 
 function SwipeableEdgeDrawer(props) {
   const { window } = props;
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = React.useState(true);
 
   const toggleDrawer = (newOpen) => () => {
     setOpen(newOpen);
@@ -306,6 +306,7 @@ function SwipeableEdgeDrawer(props) {
         >
           <Puller />
           <Typography
+            component="div"
             sx={{ p: 2, color: "text.secondary", fontWeight: "bold" }}
           >
             Your Activity
