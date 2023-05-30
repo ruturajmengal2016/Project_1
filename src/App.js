@@ -16,6 +16,7 @@ import OurStore from "./Pages/OurStore";
 import Profile from "./Pages/Profile";
 import Cart from "./Pages/Cart";
 import Bill from "./Components/Atoms/Bill";
+import FAQ from "./Pages/FAQ";
 function App() {
   const router = createBrowserRouter(
     createRoutesFromElements(
@@ -23,7 +24,7 @@ function App() {
         <Route index path="/" element={<Home />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/store/:name" element={<Store />} />
-        <Route path="/faq" element={<h1>FAQ</h1>} />
+        <Route path="/faq" element={<FAQ />} />
         <Route path="/report" element={<h1>Report</h1>} />
         <Route path="/login" element={<Login />} />
         <Route path="/profile" element={<Profile />} />
