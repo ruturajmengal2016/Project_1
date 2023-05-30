@@ -21,6 +21,7 @@ export const serverData = createSlice({
   initialState: {
     store: [1, 2, 3, 4, 5, 6, 7],
     cartData: [],
+    bill: [],
   },
   reducers: {
     updateStore: (state, action) => {
@@ -32,9 +33,38 @@ export const serverData = createSlice({
     deleteCartData: (state, action) => {
       state.cartData.splice(action.payload.data, 1);
     },
+    updateBill: (state, action) => {
+      for (let item of action.payload.data) {
+        state.bill.push({
+          name: item.name,
+          quantity: item.fat,
+          price: item.calories,
+        });
+      }
+    },
+    billQuantity: (state, action) => {
+      if (action.payload.type === "inc") {
+        for (let item in state.bill) {
+          if (state.bill[item].name == action.payload.data) {
+            state.bill[item].quantity += 1;
+          }
+        }
+      } else if (action.payload.type === "dec") {
+        for (let item in state.bill) {
+          if (state.bill[item].name == action.payload.data) {
+            state.bill[item].quantity -= 1;
+          }
+        }
+      }
+    },
   },
 });
 
 export const { updateCart, updateNotification } = update.actions;
-export const { updateStore, updateCartData, deleteCartData } =
-  serverData.actions;
+export const {
+  updateStore,
+  updateCartData,
+  deleteCartData,
+  updateBill,
+  billQuantity,
+} = serverData.actions;

@@ -1,7 +1,7 @@
 import * as React from "react";
 import Box from "@mui/material/Box";
 import { Divider, Typography } from "@mui/material";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import CartBox from "../Components/Atoms/CartBox";
 import KeyboardBackspaceIcon from "@mui/icons-material/KeyboardBackspace";
 import EastIcon from "@mui/icons-material/East";
@@ -10,8 +10,10 @@ import Snackbar from "@mui/material/Snackbar";
 import Alert from "@mui/material/Alert";
 import ImageList from "@mui/material/ImageList";
 import ImageListItem from "@mui/material/ImageListItem";
+import { updateBill } from "../Redux/slice";
 export default function Cart() {
   const cartData = useSelector((state) => state.stores.cartData);
+  const dispatch = useDispatch();
   const [open, setOpen] = React.useState(false);
   const handleClick = (data) => {
     setOpen(data);
@@ -147,6 +149,9 @@ export default function Cart() {
         </Link>
         {cartData.length ? (
           <Link
+            onClick={() => {
+              dispatch(updateBill({ data: cartData}));
+            }}
             to="/bill"
             style={{
               color: "green",
