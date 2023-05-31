@@ -193,7 +193,7 @@ export default function Profile() {
               label={ele.title}
               key={ind}
               variant="standard"
-              defaultValue="Hello"
+              placeholder={`Enter your ${ele}`}
               InputProps={{
                 readOnly: setting,
                 endAdornment: (
@@ -210,7 +210,7 @@ export default function Profile() {
           label="Default address"
           multiline
           rows={4}
-          defaultValue="Default Value"
+          defaultValue="Address"
           variant="standard"
         />
         <Box
