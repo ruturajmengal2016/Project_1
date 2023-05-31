@@ -193,7 +193,7 @@ export default function Profile() {
               label={ele.title}
               key={ind}
               variant="standard"
-              placeholder={`Enter your ${ele}`}
+              placeholder={`Enter your ${ele.title}`}
               InputProps={{
                 readOnly: setting,
                 endAdornment: (
