@@ -30,7 +30,6 @@ export default function Bill() {
           justifyContent: "flex-start",
           alignItems: "center",
           gap: "1rem",
-          overflowY: "auto",
         }}
       >
         <Box
@@ -43,9 +42,18 @@ export default function Bill() {
             backgroundColor: "lightgray",
           }}
         ></Box>
-        {billData.map((ele, ind) => {
-          return <Itembox key={ind} items={ele} />;
-        })}
+        <Box
+          sx={{
+            height: "65%",
+            minHeight: "fit-content",
+            width: "100%",
+            overflowY: "auto",
+          }}
+        >
+          {billData.map((ele, ind) => {
+            return <Itembox key={ind} items={ele} />;
+          })}
+        </Box>
         <Box
           sx={{
             position: "relative",
@@ -65,7 +73,10 @@ export default function Bill() {
             Place order
           </Button>
           <Typography variant="h5" fontFamily="sans-serif">
-            ₹{200}
+            ₹
+            {billData
+              .map((ele) => ele.price)
+              .reduce((curr, nextVal) => curr + nextVal, 0)}
           </Typography>
         </Box>
       </Box>
@@ -86,7 +97,9 @@ const Itembox = ({ items }) => {
         padding: "0rem 0.3rem",
       }}
     >
-      <Typography component="div">{items.name}</Typography>
+      <Typography component="div" maxWidth="20%">
+        {items.name}
+      </Typography>
       <Typography
         component="div"
         sx={{
@@ -94,6 +107,7 @@ const Itembox = ({ items }) => {
           justifyContent: "center",
           alignItems: "center",
           gap: "0.2rem",
+          maxWidth: "30%",
         }}
       >
         <IconButton
@@ -112,7 +126,9 @@ const Itembox = ({ items }) => {
           <RemoveIcon sx={{ color: "red" }} />
         </IconButton>
       </Typography>
-      <Typography component="div">{items.quantity * items.price}</Typography>
+      <Typography component="div" maxWidth="20%">
+        {items.quantity * items.price}
+      </Typography>
     </Box>
   );
 };
