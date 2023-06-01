@@ -20,11 +20,13 @@ export default function Notification() {
       <Box
         sx={{
           backgroundColor: "lightblue",
-          minHeight: "100vh",
+          height: "100%",
+          minHeight: "fit-content",
           width: "90%",
           display: "flex",
           gap: "1rem",
           padding: "1rem",
+          overflowY: "auto",
           boxSizing: "border-box",
           flexDirection: {
             xs: "column",
@@ -38,7 +40,6 @@ export default function Notification() {
             flexDirection: "column",
             boxSizing: "border-box",
             padding: "0.5rem",
-            backgroundColor: "",
             width: {
               xs: "100%",
               sm: "50%",
@@ -57,6 +58,9 @@ export default function Notification() {
               WebkitTextFillColor: "transparent",
               fontFamily: "monospace",
               textAlign: "center",
+              fontSize: {
+                xs: "2.4rem",
+              },
             }}
           >
             ADVERTISING
@@ -70,7 +74,7 @@ export default function Notification() {
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
-              fontSize: "15rem",
+              fontSize: { xs: "8rem", sm: "15rem" },
               fontFamily: "initial",
               color: "red",
               background: "black",
@@ -80,7 +84,17 @@ export default function Notification() {
           >
             50%
           </Typography>
-          <Typography textAlign="justify" p={1} fontSize={20} height="20%">
+          <Typography
+            textAlign="justify"
+            p={1}
+            height="20%"
+            sx={{
+              fontSize: {
+                xs: "0.8rem",
+                sm: "1.5rem",
+              },
+            }}
+          >
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Id quae
             modi, placeat sed minima libero ad nulla, temporibus recusandae sit
             assumenda cum saepe excepturi sunt alias voluptas reprehenderit
