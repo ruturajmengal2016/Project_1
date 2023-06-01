@@ -6,7 +6,7 @@ import {
   RouterProvider,
   Outlet,
 } from "react-router-dom";
-import Navigation from "./Components/Atoms/Navigation";
+import Navigation from "./Components/Navigation";
 import { Provider } from "react-redux";
 import { store } from "./Redux/store";
 import Home from "./Pages/Home";
@@ -15,9 +15,10 @@ import Store from "./Pages/Store";
 import OurStore from "./Pages/OurStore";
 import Profile from "./Pages/Profile";
 import Cart from "./Pages/Cart";
-import Bill from "./Components/Atoms/Bill";
+import Bill from "./Components/Bill";
 import FAQ from "./Pages/FAQ";
-import Notification from "./Components/Atoms/Advertisements";
+import Notification from "./Components/Advertisements";
+import Report from "./Components/Report";
 function App() {
   const router = createBrowserRouter(
     createRoutesFromElements(
@@ -26,7 +27,7 @@ function App() {
         <Route path="/cart" element={<Cart />} />
         <Route path="/store/:name" element={<Store />} />
         <Route path="/faq" element={<FAQ />} />
-        <Route path="/report" element={<h1>Report</h1>} />
+        <Route path="/report" element={<Report />} />
         <Route path="/login" element={<Login />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/favourite" element={<h1>Favourite</h1>} />

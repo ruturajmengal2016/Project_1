@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Button, IconButton, Typography } from "@mui/material";
 import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
-import { billQuantity, updateBill } from "../../Redux/slice";
+import { billQuantity, updateBill } from "../Redux/slice";
 
 export default function Bill() {
   const billData = useSelector((state) => state.stores.bill);
