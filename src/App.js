@@ -19,6 +19,7 @@ import Bill from "./Components/Bill";
 import FAQ from "./Pages/FAQ";
 import Notification from "./Components/Advertisements";
 import Report from "./Components/Report";
+import Favourite from "./Components/Favourite";
 function App() {
   const router = createBrowserRouter(
     createRoutesFromElements(
@@ -30,7 +31,7 @@ function App() {
         <Route path="/report" element={<Report />} />
         <Route path="/login" element={<Login />} />
         <Route path="/profile" element={<Profile />} />
-        <Route path="/favourite" element={<h1>Favourite</h1>} />
+        <Route path="/favourite" element={<Favourite />} />
         <Route path="/notification" element={<Notification />} />
         <Route path="/ourstore/:title" element={<OurStore />} />
         <Route path="/bill" element={<Bill />} />

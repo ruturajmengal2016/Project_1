@@ -13,9 +13,13 @@ import ShareIcon from "@mui/icons-material/Share";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import StoreMenu from "./StoreMenu";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { favourite } from "../../Redux/slice";
 
-export default function SoreCard({ closeShop, title }) {
+export default function StoreCard({ closeShop, title, Fav = false }) {
   const [anchorEl, setAnchorEl] = React.useState(null);
+  const [isFav, setisFav] = React.useState(Fav);
+  const dispatch = useDispatch();
   const date = new Date().toDateString();
   const open = Boolean(anchorEl);
   const navigate = useNavigate();
@@ -106,8 +110,33 @@ export default function SoreCard({ closeShop, title }) {
         </Typography>
       </CardContent>
       <CardActions disableSpacing>
-        <IconButton aria-label="add to favorites">
-          <FavoriteIcon />
+        <IconButton
+          aria-label="add to favorites"
+          onClick={(e) => {
+            e.stopPropagation();
+            setisFav(!isFav);
+            if (!isFav) {
+              dispatch(
+                favourite({
+                  title: title,
+                  closeShop: closeShop,
+                  isFav: isFav,
+                  type: "add",
+                })
+              );
+            } else {
+              dispatch(
+                favourite({
+                  title: title,
+                  closeShop: closeShop,
+                  isFav: isFav,
+                  type: "remove",
+                })
+              );
+            }
+          }}
+        >
+          <FavoriteIcon sx={{ color: isFav && "#f50057" }} />
         </IconButton>
         <IconButton aria-label="share">
           <ShareIcon />

@@ -22,8 +22,22 @@ export const serverData = createSlice({
     store: [1, 2, 3, 4, 5, 6, 7],
     cartData: [],
     bill: [],
+    favourite: [],
   },
   reducers: {
+    favourite: (state, action) => {
+      if (action.payload.type === "add") {
+        state.favourite.push({
+          title: action.payload.title,
+          closeShop: action.payload.closeShop,
+          isFav: true,
+        });
+      } else if (action.payload.type === "remove") {
+        state.favourite = state.favourite.filter((ele, ind) => {
+          return ele.title !== action.payload.title;
+        });
+      }
+    },
     updateStore: (state, action) => {
       state.store = action.payload.data;
     },
@@ -62,6 +76,7 @@ export const serverData = createSlice({
 
 export const { updateCart, updateNotification } = update.actions;
 export const {
+  favourite,
   updateStore,
   updateCartData,
   deleteCartData,

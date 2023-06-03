@@ -1,11 +1,12 @@
 import * as React from "react";
 import Box from "@mui/material/Box";
 import { useDispatch, useSelector } from "react-redux";
-import { Button, IconButton, Typography } from "@mui/material";
+import { Button, Divider, IconButton, Typography } from "@mui/material";
 import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
 import { billQuantity, updateBill } from "../Redux/slice";
-
+import PhoneIcon from "@mui/icons-material/Phone";
+import ContactMailIcon from "@mui/icons-material/ContactMail";
 export default function Bill() {
   const billData = useSelector((state) => state.stores.bill);
   return (
@@ -41,7 +42,9 @@ export default function Bill() {
             width: "100%",
             backgroundColor: "lightgray",
           }}
-        ></Box>
+        >
+          <Header />
+        </Box>
         <Box
           sx={{
             height: "65%",
@@ -89,25 +92,28 @@ const Itembox = ({ items }) => {
   return (
     <Box
       sx={{
-        width: "90%",
+        width: "100%",
         minHeight: "10%",
         display: "flex",
         alignItems: "center",
         justifyContent: "space-between",
         padding: "0rem 0.3rem",
+        "&:hover": {
+          backgroundColor: "lightgray",
+        },
       }}
     >
-      <Typography component="div" maxWidth="20%">
+      <Typography component="div" width="30%">
         {items.name}
       </Typography>
       <Typography
         component="div"
         sx={{
           display: "flex",
-          justifyContent: "center",
+          justifyContent: "space-between",
           alignItems: "center",
           gap: "0.2rem",
-          maxWidth: "30%",
+          width: "30%",
         }}
       >
         <IconButton
@@ -126,8 +132,65 @@ const Itembox = ({ items }) => {
           <RemoveIcon sx={{ color: "red" }} />
         </IconButton>
       </Typography>
-      <Typography component="div" maxWidth="20%">
-        {items.quantity * items.price}
+      <Typography component="div" width="20%">
+        {Math.floor(items.quantity * items.price)}
+      </Typography>
+    </Box>
+  );
+};
+
+const Header = () => {
+  return (
+    <Box sx={{ fontFamily: "cursive", p: "0.5rem" }}>
+      <Typography variant="h5">INVOICE</Typography>
+      <Divider
+        component="div"
+        sx={{
+          fontWeight: "bold",
+          height: "0.5rem",
+          borderBottomWidth: "0.2rem",
+          borderColor: "lightcoral",
+        }}
+      />
+      <Box>
+        <Typography
+          variant="caption"
+          fontSize={20}
+          sx={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "flex-start",
+            gap: "0.5rem",
+          }}
+        >
+          <PhoneIcon />
+          +87 4378572835
+        </Typography>
+        <Typography
+          variant="caption"
+          fontSize={20}
+          sx={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "flex-start",
+            gap: "0.5rem",
+          }}
+        >
+          <ContactMailIcon />
+          salesyours@gmail.com
+        </Typography>
+      </Box>
+      <Typography
+        variant="caption"
+        fontSize={20}
+        sx={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "flex-start",
+          gap: "0.5rem",
+        }}
+      >
+        Bill id:fdma32523626
       </Typography>
     </Box>
   );
