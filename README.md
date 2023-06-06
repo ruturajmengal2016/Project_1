@@ -77,3 +77,9 @@ What did you learn while building this project? What challenges did you face and
 
 ## Screenshots
 
+![Screenshot 2023-06-06 102355](https://github.com/ruturajmengal2016/project_1/assets/114099113/755fafe2-7683-4810-9e11-144f8431a07d)
+![Screenshot 2023-06-06 102419](https://github.com/ruturajmengal2016/project_1/assets/114099113/8ca02b66-382d-4e76-8f11-0aa57a8cdf27)
+![Screenshot 2023-06-06 102436](https://github.com/ruturajmengal2016/project_1/assets/114099113/02140b5d-a027-4303-be5f-4975f2b0a888)
+![Screenshot 2023-06-06 102537](https://github.com/ruturajmengal2016/project_1/assets/114099113/ef2757fd-be87-45f2-8fd0-51d1fb73df0b)
+
+
