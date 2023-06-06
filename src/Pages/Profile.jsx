@@ -49,10 +49,12 @@ export default function Profile() {
   const [photo, setPhoto] = React.useState(
     JSON.parse(localStorage.getItem("photo")) || null
   );
+  const user_data = JSON.parse(localStorage.getItem("_user"));
+  console.log(user_data);
   const [setting, setSetting] = React.useState(true);
   const fields = [
-    { title: "Name", icon: "" },
-    { title: "Email", icon: <EmailIcon /> },
+    { title: "Name", value: user_data?.Name, icon: "" },
+    { title: "Email", value: user_data?.Email, icon: <EmailIcon /> },
     { title: "Phone number", icon: <PhoneEnabledIcon /> },
   ];
   return (
@@ -190,8 +192,9 @@ export default function Profile() {
         {fields.map((ele, ind) => {
           return (
             <TextField
-              label={ele.title}
+              hiddenLabel
               key={ind}
+              value={ele?.value}
               variant="standard"
               placeholder={`Enter your ${ele.title}`}
               InputProps={{

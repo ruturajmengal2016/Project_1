@@ -4,7 +4,7 @@ Compras (electronic commerce) is the buying and selling of goods and services, o
 
 ## Tech Stack
 
-**Client:** React, Redux, Material Ui, axios
+**Client:** React, Redux, Material Ui, axios,firebase
 
 **Server:** Node, Express, Prisma, cors
 
