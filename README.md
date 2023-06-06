@@ -55,7 +55,7 @@ Start the server
 
 ## Deployment
 
-The deployment link of this project is https://near-store.netlify.app/
+The deployment link of this project is https://compras-1f651.firebaseapp.com/
 
 To deploy this project run
 
