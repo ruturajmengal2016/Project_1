@@ -55,7 +55,7 @@ Start the server
 
 ## Deployment
 
-The deployment link of this project is https://compras-1f651.firebaseapp.com/
+The deployment link of this project is https://compras-1f651.web.app
 
 To deploy this project run
 
