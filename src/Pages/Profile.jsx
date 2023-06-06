@@ -4,8 +4,11 @@ import Avatar from "@mui/material/Avatar";
 import SettingsIcon from "@mui/icons-material/Settings";
 import {
   Button,
+  Fade,
   IconButton,
   InputAdornment,
+  Menu,
+  MenuItem,
   TextField,
   Tooltip,
   Typography,
@@ -20,6 +23,7 @@ import SwipeableDrawer from "@mui/material/SwipeableDrawer";
 import EmailIcon from "@mui/icons-material/Email";
 import PhoneEnabledIcon from "@mui/icons-material/PhoneEnabled";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
+import { auth } from "../config/firebase";
 
 const drawerBleeding = 56;
 
@@ -57,6 +61,15 @@ export default function Profile() {
     { title: "Email", value: user_data?.Email, icon: <EmailIcon /> },
     { title: "Phone number", icon: <PhoneEnabledIcon /> },
   ];
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const open = Boolean(anchorEl);
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
   return (
     <Box
       sx={{
@@ -90,9 +103,11 @@ export default function Profile() {
         }}
       >
         <IconButton
-          onClick={() => {
-            setSetting(false);
-          }}
+          id="fade-button"
+          aria-controls={open ? "fade-menu" : undefined}
+          aria-haspopup="true"
+          aria-expanded={open ? "true" : undefined}
+          onClick={handleClick}
           sx={{
             position: "absolute",
             top: 0,
@@ -107,6 +122,12 @@ export default function Profile() {
             />
           </Tooltip>
         </IconButton>
+        <FadeMenu
+          handleClose={handleClose}
+          open={open}
+          anchorEl={anchorEl}
+          setSetting={setSetting}
+        />
         <Avatar
           component="label"
           alt="Remy Sharp"
@@ -337,3 +358,44 @@ SwipeableEdgeDrawer.propTypes = {
    */
   window: PropTypes.func,
 };
+
+function FadeMenu({ handleClose, open, anchorEl, setSetting }) {
+  return (
+    <div>
+      <Menu
+        id="fade-menu"
+        MenuListProps={{
+          "aria-labelledby": "fade-button",
+        }}
+        anchorEl={anchorEl}
+        open={open}
+        onClose={handleClose}
+        TransitionComponent={Fade}
+      >
+        <MenuItem
+          onClick={() => {
+            setSetting(false);
+            handleClose();
+          }}
+        >
+          Update contact
+        </MenuItem>
+        <MenuItem
+          onClick={async () => {
+            await auth
+              .signOut()
+              .then(() => {
+                handleClose();
+                alert("sign out sucessfully...");
+              })
+              .catch((error) => {
+                alert(error.message);
+              });
+          }}
+        >
+          Logout
+        </MenuItem>
+      </Menu>
+    </div>
+  );
+}
