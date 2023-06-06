@@ -7,8 +7,21 @@ import RemoveIcon from "@mui/icons-material/Remove";
 import { billQuantity, updateBill } from "../Redux/slice";
 import PhoneIcon from "@mui/icons-material/Phone";
 import ContactMailIcon from "@mui/icons-material/ContactMail";
+import { onAuthStateChanged } from "firebase/auth";
+import { auth } from "../config/firebase";
+import { useNavigate } from "react-router-dom";
 export default function Bill() {
   const billData = useSelector((state) => state.stores.bill);
+  const navigate = useNavigate();
+  React.useEffect(() => {
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        // user logged in
+      } else {
+        navigate("/login");
+      }
+    });
+  }, []);
   return (
     <Box
       sx={{
