@@ -181,9 +181,10 @@ export default function Navigation() {
       <AppBar position="sticky">
         <Toolbar
           sx={{
+            position: "sticky",
+            top: 0,
             padding: "0rem",
-            background:
-              `linear-gradient(234deg, rgba(34,43,195,0.560749299719888) 19%, rgba(224,18,53,0.5775560224089635) 100%)`,
+            background: `linear-gradient(234deg, rgba(34,43,195,0.560749299719888) 19%, rgba(224,18,53,0.5775560224089635) 100%)`,
           }}
         >
           <IconButton
