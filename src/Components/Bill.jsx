@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Button, Divider, IconButton, Typography } from "@mui/material";
 import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
-import { billQuantity, updateBill } from "../Redux/slice";
+import { billQuantity } from "../Redux/slice";
 import PhoneIcon from "@mui/icons-material/Phone";
 import ContactMailIcon from "@mui/icons-material/ContactMail";
 import { onAuthStateChanged } from "firebase/auth";
@@ -21,7 +21,7 @@ export default function Bill() {
         navigate("/login");
       }
     });
-  }, []);
+  }, [navigate]);
   return (
     <Box
       sx={{

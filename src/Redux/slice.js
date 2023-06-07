@@ -59,13 +59,13 @@ export const serverData = createSlice({
     billQuantity: (state, action) => {
       if (action.payload.type === "inc") {
         for (let item in state.bill) {
-          if (state.bill[item].name == action.payload.data) {
+          if (state.bill[item].name === action.payload.data) {
             state.bill[item].quantity += 1;
           }
         }
       } else if (action.payload.type === "dec") {
         for (let item in state.bill) {
-          if (state.bill[item].name == action.payload.data) {
+          if (state.bill[item].name === action.payload.data) {
             state.bill[item].quantity -= 1;
           }
         }
