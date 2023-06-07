@@ -54,18 +54,24 @@ function Home() {
             sx={{ alignSelf: "center" }}
           />
           <Typography
-            variant="h2"
-            fontFamily="Tilt Prism, cursive"
-            fontWeight={500}
+            variant="h3"
+            fontFamily="Kanit, sans-serif"
+            fontWeight={600}
+            sx={{
+              wordSpacing: "1px",
+              fontStyle: "oblique",
+              width: "90%",
+            }}
           >
-            Are you want to create own store?
+            👋Hey, Do you want to create your own store?
           </Typography>
           <Typography
-            variant="h5"
+            variant="caption"
             fontFamily="Kanit, sans-serif"
             fontWeight={500}
+            fontSize={20}
           >
-            here, you can visit a website.
+            here, you can create the store.
           </Typography>
           <Button
             variant="contained"
