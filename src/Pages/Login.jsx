@@ -8,6 +8,7 @@ import {
 } from "@mui/material";
 import {
   createUserWithEmailAndPassword,
+  sendEmailVerification,
   signInWithEmailAndPassword,
   signInWithPopup,
 } from "firebase/auth";
@@ -81,6 +82,11 @@ const SignIn = ({ navigate, handleChange }) => {
       <Button
         onClick={async () => {
           await signInWithPopup(auth, googleProvider)
+            .then((response) => {
+              console.log(response.user.emailVerified);
+              alert("Please verify you email id");
+              sendEmailVerification(auth.currentUser);
+            })
             .then(() => {
               navigate("/");
             })
@@ -157,6 +163,11 @@ const SignUp = ({ navigate, handleChange }) => {
           details.Email,
           details.Password
         )
+          .then(async () => {
+            await sendEmailVerification(auth.currentUser).then(() => {
+              alert("verify your email");
+            });
+          })
           .then(() => {
             localStorage.setItem("_user", JSON.stringify(details));
           })

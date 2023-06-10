@@ -15,7 +15,7 @@ export default function Bill() {
   const navigate = useNavigate();
   React.useEffect(() => {
     onAuthStateChanged(auth, (user) => {
-      if (user) {
+      if (user && auth.currentUser.emailVerified) {
         // user logged in
       } else {
         navigate("/login");
